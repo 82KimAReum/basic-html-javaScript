@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type='text/css'>
+     #catcher{
+         border: 1px solid black;
+         width:400px;
+         height:500px;
+     }
+    </style>
+     <script>
+        window.addEventListener('load',setup,false);
+         
+        function setup(){
+           var cat=document.querySelector('#catcher');
+            cat.addEventListener('dragover', function(evt){
+                evt.preventDefault();
+            }, false);
+            cat.addEventListener('drop',function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                var f=e.dataTransfer.files;
+                var reader=new FileReader();
+                
+                reader.addEventListener('load', function(evt){
+                    var contents = reader.result;
+                    // contents = contents.replace(/</g, "&lt;");
+                    // contents = contents.replace(/>/g, "&gt;");
+                    // contents = contents.replace(/\n/g, '<br />');
+                    cat.innerHTML = contents;
+                },false);
+
+                reader.readAsText(f[0]);
+                
+            },false);
+        }
+    </script>
+</head>
+<body>
+    
+    <div id='catcher' ></div>
+   
+</body>
+</html>

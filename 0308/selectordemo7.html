@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>child selector demo</title>
+
+    
+    <style type='text/css'>
+        #mydiv>p{color:red}
+        /* >는 자식 */
+
+         #mydiv div{color:blue}
+        /* 띄어쓰기는 자손 */
+
+    </style>
+</head>
+<body>
+    <div id='mydiv'>
+        <h1>Selector Demo</h1>
+        <p>CSS3</p><!--#mydiv 자식-->
+       
+        <div><!--#mydiv의 자손-->
+            <p>JavaScript</p>
+        </div>
+   
+    </div>
+</body>
+</html>

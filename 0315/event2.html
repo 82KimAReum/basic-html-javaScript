@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>checkbox Demo</title>
+    <script>
+        window.addEventListener('load',setup,false);
+        function setup(){
+            document.getElementById('btnCheck').addEventListener('click',mycheck,false);
+
+        }
+        function mycheck() {
+            var str='';
+            var arr= document.getElementsByName('hobby');
+            for (var i=0; i<arr.length; i++){
+                if(arr[i].checked){
+                    str +=arr[i].value+',';
+                }
+               
+            }document.getElementById('result').innerHTML=str.substring(0,str.length-1);// -1 은 , 빼기
+        }
+    </script>
+</head>
+<body>
+    <p>당신의 취미를 선택해 주세요
+        <button type='button' id='btnCheck'>선택</button></p>
+    <input type='checkbox'name='hobby'value='등산'>등산<br>
+    <input type='checkbox'name='hobby'value='낚시'>낚시<br>
+    <input type='checkbox'name='hobby'value='게임'>게임<br>
+    <input type='checkbox'name='hobby'value='바둑'>바둑<br>
+    <input type='checkbox'name='hobby'value='꽃꽂이'>꽃꽂이<br>
+    <input type='checkbox'name='hobby'value='독서'>독서<br>
+    <input type='checkbox'name='hobby'value='영화감상'>영화감상<br>
+
+    당신의 취미: <output id='result'></output>
+
+</body>
+</html>

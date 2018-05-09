@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css table demo</title>
+    <style type='text/css'>
+    table{
+        border-width:1px;
+        /* 선두깨 */
+        border-bottom-width: 2px;
+        border-left-width: 3px;
+        border-right-width: 4px;
+        /* border-style: double; */
+        border-color: red;
+        border-color:red blueviolet green orange;
+        /* 시계방향 */
+        /* border-width:0px 1px 1px 0px; */
+        /* border-collapse: collapse; */
+        width: 200px;
+        
+        margin-left: auto;
+        margin-right: auto;
+        
+        height: 300px;
+        
+        border-spacing: 2em;
+        /* 셀과 셀사이의 간격 */
+    }
+     td{
+        border-width:2px;
+        
+        border-style: dotted;
+        border-color: blue;
+        width: 150px;
+        text-align: center;
+        vertical-align: bottom;
+        padding:20px;
+        /* 외각선과 데이터와의 간격 */
+    } 
+    caption{caption-side: bottom;
+        /* align */
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <caption>Table Demo</caption>
+        <tr>
+            <td>HTML5</td>
+            <td>CSS3</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>jQuery</td>
+        </tr>
+    </table>
+    <br>
+
+</body>
+</html>

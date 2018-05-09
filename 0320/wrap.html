@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>wrap() wrapAll() DEMO</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+          //$('strong').wrap('<div></div>'); //strong 마다
+          $('strong').wrapAll('<div></div>');//strong 전체를 하나의 <div>로  
+        });
+    </script>
+
+</head>
+<body>
+    <strong>텍스트텍스트텍스트</strong>
+    <strong>텍스트텍스트텍스트</strong>
+    
+</body>
+</html>

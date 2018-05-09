@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form1 demo</title>
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        // 입력체크
+        $(function(){
+           $('form').submit(function(){
+
+               //if(!this.txtName.value){
+                if($("input[name='txtName']").val()==""){
+                    $("input[name='txtName']").css({'border':'1px solid red','background-color':'yellow'})
+                    .after("  <span style='color:red'>이름을 입력해 주세요</span>");
+                    
+                    return false;//전송 방지//이름을 안넣어서
+               }
+           });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        Name: <input type="text" id='txtName' name='txtName'><br>
+        <input type='submit' value="전송">
+    </form>
+</body>
+</html>

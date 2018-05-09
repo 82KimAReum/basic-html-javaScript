@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>find() DEMO</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+          $('div#container').find('h1').css('color','red');//#container자손중 h1찾음
+
+           
+        });
+        
+    </script>
+    <style type='text/css'>
+       
+    </style>
+</head>
+<body>
+        <div id='container'>
+                <div id='sub'>
+                    <p>div안의 p</p>
+                    
+                </div>
+                <p id='part1'>hello</p>
+                <h1>world</h1>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>File API Demo</title>
+   <script>
+      window.addEventListener('load', setup, false);
+      function setup(){
+         var myfiles = document.querySelector('#myfiles');
+         myfiles.addEventListener('change', myChange, false);
+      }
+      function myChange(){
+         var file = this.files[0];
+        //  console.log(file.type);
+        //  console.log(file.name);
+        //  console.log(file.size);
+        //  console.log(file.lastModified);
+        //  console.log(file.lastModifiedDate);
+        var str='<ul>';
+        for(var key in file ){
+            str += '<li>'+key+ ': '+file[key]+'</li>';
+        }
+        str+='</ul>';
+        document.getElementById('fileinfo').innerHTML=str;
+      }
+   </script>
+</head>
+<body>
+   <div>
+      File : <input type='file' id='myfiles' />
+   </div>
+   <h1>File Info</h1>
+   <div id='fileinfo'></div>
+</body>
+</html>

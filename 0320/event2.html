@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>event2 demo</title>
+   <script src='js/jquery-1.12.4.js'></script>
+   <script>
+      $(function(){
+       $('a').click(function(){
+           $('img').attr('src','images/'+$(this).attr('href'));
+           $('img').attr('alt',$(this).text());
+           return false;
+       });
+      });
+
+   </script>
+   <style type="text/css">
+        li{
+            
+            list-style-type: none;
+            display: inline;
+            margin:10px;
+            
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        div{
+            background-color: navy;
+            color:white;
+        }
+        img{
+           text-align: center;
+        }
+   </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><a href='harry.jpg'>해리포터</a></li>|
+            <li><a href='ring.jpg'>반지의 제왕</a></li>|
+            <li><a href='ironman.jpg'>아이언맨</a></li>|
+            <li><a href='bourne.jpg'>본 아이덴티티</a></li>|
+        </ul>
+    </div>
+    <img />
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>event demo</title>
+    
+    <script>
+       // window.addEventListener('load',setup);//level2
+        //window.onload =setup;
+        function setup(){
+
+           // document.getElementsByTagName('button')[0].addEventListener('click',myclick);//level2
+            document.getElementsByTagName('button')[0]=myclick;
+        }
+        function myclick(t){
+            //var btn=document.getElementsByTagName('button')[0];
+            //btn.style.fontSize = "40pt";
+            //btn.style.backgroundColor="yellow";
+
+            //t.style.fontSize = "40pt";
+           // t.style.backgroundColor="yellow";
+           alert(t.innerHTML);
+        }
+        window.onload=function(){
+            document.getElementsByTagName('div')[0].onmousedown=function(e){
+                document.getElementsByTagName('output')[0].innerHTML=
+                "(x,y) = "+"("+e.x+","+e.y+")"
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div style='width:300px;height:300px;background-color:yellow'>Hello,World</div>
+    <output></output>
+
+    <button type='button' onclick="myclick(this)">click me</button>
+    <script>
+        //java script 의 event종류
+        //1.DOM-level 0 //<button type='button' onclick="myclick()"></button>//비표준
+        //2.DOM-level 2//표준
+
+
+
+    </script>
+</body>
+</html>

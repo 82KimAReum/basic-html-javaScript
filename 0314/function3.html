@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='student.js'></script>
+</head>
+<body>
+    <script>
+        var bbb=setup;
+        function setup(){
+            //1.
+            //return 'hello';
+            //2. object return 
+            //return new Student('한지민');
+            //3.array return 
+            //return new Array('lemon','apple');
+            //4.function return 
+            return function(){
+                document.write('hello,world<br>');
+            }
+        }
+        //document.write(outer(5,9)());
+       var str =bbb();
+      str();
+       document.write(typeof str);
+       if(str instanceof Student){
+           document.write(str.getName());
+       }else if(str instanceof Date){
+        document.write(str.getFullYear());
+       }else if(str instanceof Array){
+        document.write(str[1]);
+       }
+       //document.write('str = '+str[0]);
+    </script>
+</body>
+</html>

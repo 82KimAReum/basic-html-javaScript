@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>effect5 demo</title>
+   <script src='js/jquery-1.12.4.js'></script>
+   <script>
+        $(function(){
+           $('button:first').click(function(){
+              $('div').animate({ width:'0px'}, 1000);
+           });
+           $('button:last').click(function(){
+              $('div').animate({ width:'300px'}, 1000);
+           });
+        });
+     </script>
+     <style type='text/css'>
+        div {
+           display:inline;
+           width:300px;
+           overflow: hidden;
+        }
+     </style>
+</head>
+<body>
+    <div>
+        <img src='images/apple.jpg' width="300" height="300">
+    </div>
+       
+       <button>감추기</button>
+        <button>보이기</button>
+</body>
+</html>

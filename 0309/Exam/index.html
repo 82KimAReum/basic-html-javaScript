@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>계산퀴즈</legend>
+            <form>
+                <div class='title'>이름과 계산의 답을 입력 한 후 완료 단추를 눌러 주세요.</div>
+                    <span id='name'>이름:<input type ="text" name ="namebx" size='10'value='설운도'></span><br><br/>
+                    
+                     <div class='num'><span class='li'>1. </span>5 + 6 = <span class='number'><input type='number'  min='1' max='100'  value="11"></div><br/>
+                     <div class='num'><span class='li'>2. </span> 8 - 3 = <span class='number'><input type='number'  min='1' max='100'  value="5"></div><br/> 
+                     <div class='num'><span class='li'>3. </span> 7 x 6 = <span class='number'><input type='number'  min='1' max='100'  value="42"></div><br/>
+                     <div class='num'><span class='li'>4. </span> 15 ÷ 3 = <span class='number'><input type='number'  min='1' max='100'  value="5"></div><br/>
+                     <div class='num'><span class='li'>5. </span> 8 +6 -3 x 2 ÷ 2 = <span class='number'><input type='number'  min='1' max='100'  value="2" id='boxred'></div><br/>
+                     
+                     <p id='sub'><input type ="submit" value="완료" id='submit'/></p>
+                
+            </form>
+
+        </fieldset>
+        <fieldset>
+                <div class='title'><a href=''>설운도</a>님의 2018-03-10 계산퀴즈 결과 <br>총 5문제 중 1문제를 틀렸습니다.</div><br>
+
+                <div class='title'>틀린 답은 <span id='red'>빨간색</span>으로 표시 하였습니다.</div><br>
+
+                <div class='title'>최종 점수는 <span id='red_big'>80 점</span> 입니다.</div><br>
+
+        </fieldset>
+    </div>
+</body>
+</html>

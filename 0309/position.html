@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css position demo</title>
+    <style type='text/css'>
+        img#first{
+            z-index:0;
+            /* 앞으로 보내기 */
+        }
+        img#second{
+            /* 마지막 사진에 대한 position */
+            /* position: relative;
+            left: 50px; */
+
+            position:absolute;
+            left: 50px;
+            top: 100px;
+            z-index: -1;
+        }
+
+
+        div{
+            border: 1px solid #abcdef;
+            position: absolute;
+            top:250px;left:250px;
+            width: 300px; height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src='images/jimin.jpg' id='first'>
+    <img src='images/지민.jpg' id='second'>
+
+    <div>
+    <h1>서시</h1>
+
+    <p>윤동주</p>
+       
+            <p>죽는 날까지 하늘을 우러러<br>
+                
+            한점 부끄럼이 없기를,<br>
+            
+            잎새에 이는 바람에도<br>
+            
+            나는 괴로워했다.<br>
+            
+            별을 노래하는 마음으로<br>
+            
+            모든 죽어 가는 것을 사랑해야지.<br>
+            
+            그리고 나한테 주어진 길을<br>
+            
+            걸어가야겠다.<br></p>
+      
+
+        <p>오늘 밤에도 별이 바람에 스치운다.<br> </p>
+
+            </div>
+
+
+</body>
+</html>

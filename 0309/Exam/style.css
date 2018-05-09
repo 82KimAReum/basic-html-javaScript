@@ -1,0 +1,63 @@
+
+    
+    div{
+        font-family: "Lucida Grande",Tahoma,Verdana,Arial,helvetica,sans-serif;
+       font-size: 90%; 
+    }
+    fieldset{
+         width: 690px;
+        
+    }
+    legend{
+        font-size:1.5em;
+        font-weight: bold;
+    }
+   
+    fieldset:first-child{
+        float:left;
+        width: 280px;
+        height: 300px;
+        border-color: #aba23c;
+    }
+    fieldset:last-child{
+        float:left;
+        width: 280px;
+        height: 300px;
+        border-color: #aba23c;
+    }
+    .number{
+        float: right;
+    }
+    #sub{
+       text-align: center;
+       
+   }
+   #name{float: right;}
+   /* fieldset div{color:silver;} */
+   #red{
+       color: red;
+   }
+  
+   #red_big{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+   }
+   div a{
+       color: silver;
+   }
+   li{
+       list-style-type: decimal;
+       
+   }
+    .li{color:silver;font-weight: bold;}
+    div .title{
+        color:silver;
+    }
+  .num{
+        line-height: 10px;
+    }
+    #boxred{
+        background-color:red;
+    }
+    

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery demo4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- cdn -->
+    <script>
+        $().ready( function() {
+            $('li>u').addClass('bg');//li태그중 자식 u만
+            $('#myfavorite>li').addClass('horizontal');
+            $('.spring').click(function(){
+                alert('hello,Spring Framework');
+            });
+        });
+       
+    </script>
+    <style type='text/css'>
+        .bg{
+            background-color:yellow;
+        }
+        .horizontal{
+            float:left;
+            list-style-type: none;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>나의 관심사항</h2>
+    <ul id='myfavorite' >
+        <li><u>java</u></li>
+        <li>Oracle</li>
+        <li class='spring'>Spring</li>
+        <li id='jquery'>j<i>Q<i>uery</li>
+      
+    </ul>
+    <br><br><br>Spring 을 클릭하시오.
+</body>
+</html>

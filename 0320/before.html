@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>before() inserBefore() DEMO</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+            //$('p').before('<div>jQuery</div>');//p태그 앞에 div태그를 놓는다.
+           $('h1').insertBefore('p');//자리이동 h1을 p앞으로 
+           // $('h1').before('p');
+        });
+    </script>
+
+</head>
+<body>
+    <p>hello , world</p>
+    <h1>텍스트 텍스트 텍스트</h1>
+    
+</body>
+</html>

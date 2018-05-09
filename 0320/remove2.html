@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>remove() empty() DEMO2</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('#btnEmpty').click(function(){
+                $('div').empty();//<div></div>
+                $('div').append('<p>Servlet</p><p>JSP</p>');
+            });
+            
+            $('#btnRemove').click(function(){
+                $('div').remove();
+                $('div').append('<p>Servlet</p><p>JSP</p>');
+            })
+           
+
+        });
+    </script>
+
+</head>
+<body>
+    <div>
+        <p>jQuery</p>
+        <p>Angular</p>
+    </div>
+    <input type='button' id='btnEmpty'value='empty()로 삭제'>
+    <input type='button' id='btnRemove'value='remove()로 삭제'>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>bind() unbind() demo</title>
+   <script src='js/jquery-1.8.3.js'></script>
+   <script>
+      $(function(){
+          $('div').bind('click',function(){
+            $(this).css('background-color','green');
+          });
+          $('div').bind('dblclick',function(){
+            $(this).css('background-color','red');
+          });
+          $('div').bind('mouseover',function(){
+            $(this).css('background-color','yellow');
+          });
+          $('div').bind('mouseout',function(){
+              $(this).css('background-color','white');
+          });
+      });
+   </script>
+</head>
+<body>
+   <div style='width:300px;height:300px'>
+      Click Me!!!
+   </div>
+</body>
+</html>

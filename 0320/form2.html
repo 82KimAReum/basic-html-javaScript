@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form demo</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+                $(function(){
+                   var str = '';
+                   //alert($(':input').size());  8개
+                   $(':input').each(function(){
+                      str += '태그명 : ' + this.tagName + " : " +
+                                 '타입속성 : ' + $(this).attr('type') + '\n';
+                   });
+                   alert(str);
+                });
+        </script>
+
+</head>
+<body>
+        Name : <input type='text' /><br />
+        Gender : <input type='radio' name='gender' value='남성'>남성
+                      <input type='radio' name='gender' value='여성'>여성<br />
+        Editor : 
+           <select multiple size='5'>
+              <option>--선택--</option>
+              <option value='메모장'>메모장</option>
+              <option value='VIM'>VIM</option>
+              <option value='Emacs'>Emacs</option>
+              <option value='Eclipse'>Eclipse</option>
+              <option value='VSCode'>Visual Studio Code</option>
+              <option value='Sublime'>Sublime Text</option>
+              <option value='Editplus'>Editplus</option>
+           </select><br />
+        Age : <input type='number' /><br />
+        Hire date : <input type='date' /><br />
+        자기 소개 : <textarea cols='50' rows='5'></textarea><br />
+        <button>나 버튼</button>
+    
+</body>
+</html>

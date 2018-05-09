@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>학생 성적 정보 창</title>
+    <script src='js/student.js'></script>
+    <script>
+        window.addEventListener('load',setup,false);
+        function setup(){
+            var idx=window.location.search.substring(1).split('=')[1];//본인 주소창(location)에서 ?를 포함한 뒤 내용중(search).1번째부터 =을 기준으로 나눈것의 1번째//선택된 row의 인덱스
+            var student=opener.getStudent(idx);//index의 main에 있는 getStudent호출 
+            document.getElementById('hakbun').innerHTML=student.getHakbun();
+            document.getElementById('irum').innerHTML=student.getIrum();
+            document.getElementById('username').innerHTML=student.getIrum();
+            document.getElementById('kor').innerHTML=student.getKor();
+            document.getElementById('eng').innerHTML=student.getEng();
+            document.getElementById('mat').innerHTML=student.getMat();
+            document.getElementById('edp').innerHTML=student.getEdp();
+            document.getElementById('sum').innerHTML=student.getSum();
+            document.getElementById('avg').innerHTML=student.getAvg();
+            document.getElementById('grade').innerHTML=student.getGrade();
+        }
+    </script>
+</head>
+<body>
+    <h1><span id='username'></span>의 성적 정보</h1>
+    <ul>
+        <li>학번: <span id='hakbun'></span> </li>
+        <li>이름: <span id='irum'></span></li>
+        <li>국어: <span id='kor'></span></li>
+        <li>영어: <span id='eng'></span></li>
+        <li>수학: <span id='mat'></span></li>
+        <li>전산: <span id='edp'></span></li>
+        <li>총점: <span id='sum'></span></li>
+        <li>평균: <span id='avg'></span></li>
+        <li>평점: <span id='grade'></span></li>
+    </ul>
+    <input type='button' value="창닫기" onclick="self.close();"/>
+</body>
+</html>

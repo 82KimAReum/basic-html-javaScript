@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <script src='js/jquery-3.3.1.js'></script>
+   <script>
+      $(document).ready(function(){
+         $('input').attr('disabled', 'true');
+         $('button').click(function(){
+             $('input').removeAttr('disabled');
+            
+         });
+      });
+    //   window.onload =  function(){
+    //      document.getElementsByTagName('input')[0].disabled = true;
+    //      document.getElementsByTagName('button')[0].onclick = function(){
+    //         document.getElementsByTagName('input')[0].disabled = false;
+    //      }
+    //   }
+
+   </script>
+</head>
+<body>
+   <button type='button'>Change</button><br />
+   Name : <input type='text' />
+</body>
+</html>

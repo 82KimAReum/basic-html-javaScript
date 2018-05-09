@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Location Demo</title>
+    <script>
+    function go() {
+        var url= document.getElementById('txtURL').value;
+        //location.href=url;
+        //location.replace(url);
+        //location.reload(url);
+        location.assign(url);//뒤로가기 가능//redirect 방법
+
+//forward :url은 동일하나 다른 페이지를 보여줌//보안문제로 다른 도메인으로 갈 수 없음 
+//-JSP
+//--<jsp:forward path/>
+//--RequestDispatcher객체의 forward(url)
+
+//redirecrt: url과 화면 모두 바뀜
+//--javaScript's location.href or location.assign() or location.replace();
+//--JSP's response 객체의 sendRedirect(url)
+
+    }
+    </script>
+</head>
+<body>
+    url을 입력하세요<br>
+
+    URL: <input type='url'id='txtURL'>
+    <input type="button" value="GO"id='btnGo' onclick='go()'>
+</body>
+</html>

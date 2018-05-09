@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>drag &amp; drop demo</title>
+    <style type="text/css">
+        #foo{
+            width:100px;
+            height:100px;
+            background-color: yellow;
+            cursor:move;
+        }
+        #catcher{
+            width:200px;
+            height:200px;
+            background-color: blue;
+            margin-bottom: 50px;
+            padding: 50px;
+        }
+        body{
+            color:silver;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',setup);
+        function setup(){
+            var foo=document.querySelector ('#foo');
+            var catcher=document.querySelector ('#catcher');
+                foo.addEventListener('dragstart',function(evt){
+                    this.style.border='3px dotted red';
+                    evt.dataTransfer.effectAllowed='move';
+                    evt.dataTransfer.setData("text",this.id);
+                },false);
+                catcher.addEventListener('dragenter',function(evt){
+                    this.style.border='3px dashed orange';
+                },false);
+                catcher.addEventListener('dragleave',function(evt){
+                    this.style.border='';//다시 원 위치
+                },false);
+                catcher.addEventListener('dragover',function(evt){
+                    if(evt.preventDefault)evt.preventDefault();
+                    return false;
+
+                },false);
+                foo.addEventListener('dragend',function(evt){
+                    this.style.border='';
+                },false);
+                catcher.addEventListener('drop',function(evt){
+                    if(evt.preventDefault)evt.preventDefault();
+                    if(evt.stopPropagation)evt.stopPropagation();
+                    this.style.border='';
+                    var id = evt.dataTransfer.getData('text');//foo
+                    var elem = document.getElementById(id);//div
+                    //elem.parentNode.removeChild(elem);
+                    this.appendChild(elem);
+                    return false;
+                },false);
+        }
+    </script>
+</head>
+<body>
+    <div id='catcher'>I'm catcher</div>
+    <div id='foo' draggable='true'>I'm foo</div>
+    div는 기본적으로 드레그가 안되기때문에 draggable='true'를 줘야 함
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>form demo</title>
+   <script src='js/jquery-1.12.4.js'></script>
+   <script>
+       //fadeTo()
+      $(function(){
+         $('button:nth-of-type(1)').click(function(){
+            $('img').fadeTo('slow',0.0);
+         });
+         $('button:nth-of-type(2)').click(function(){
+            $('img').fadeTo('slow',0.5);
+         });
+         $('button:nth-of-type(3)').click(function(){
+            $('img').fadeTo('slow',1.0);
+         });
+      });
+   </script>
+   <style type='text/css'>
+      img {
+         width:450px; height:500px;
+        
+         display: none;
+      }
+   </style>
+</head>
+<body>
+   <button>투명</button>
+   <button>반투명</button>
+   <button>불투명</button>
+   <div><img src='images/jimin.jpg' /></div>
+</body>
+</html>

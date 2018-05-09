@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Op demo2</title>
+</head>
+<body>
+    //객체 지우기<br>
+    <script>
+        // document.write(("PI"in Math) +'<br>')    ;
+        // document.write(Math.PI+'<br>');
+
+        var student={name :'김철수', age:24,height:175.2};
+        document.write(("age" in student)+'<br>');//true
+        document.write(student["age"]+'<br>');//24
+        document.write(student.age+'<br>');//24
+        // delete student.age;
+        // document.write(student.age+'<br>');
+
+        var arr=['banana','apple','mango','orange'];
+        document.write((1 in arr) +'<br>');//true
+       
+        document.write(arr[1]+'<br>');//apple
+        delete arr[1];
+        document.write((1 in arr) +'<br>');//false
+        document.write(arr);//banana,,mango,orange
+        
+    </script>
+</body>
+</html>

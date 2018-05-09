@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM DEMO</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('<hr/>').insertAfter($('.content'));//content뒤로 수평선 들어감
+            $('.content:gt(0)').before("<a href='#'>top</a>");//content중 0보다 큰애 앞에 앵커 추가
+
+        });
+        // window.onload=function(){
+        //     var hr= document.createElement('hr');//<hr></hr>
+        //     var arrary= document.getElementsByClassName('content');
+        // }
+    </script>
+
+</head>
+<body>
+   <p class='chp'>서론</p>
+   <div class='content'>텍스트텍스트</div>
+   <p class='chp'>본론</p>
+   <div class='content'>텍스트텍스트</div>
+   <p class='chp'>결론</p>
+   <div class='content'>텍스트텍스트</div>
+    
+</body>
+</html>

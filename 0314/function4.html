@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function outer(who){
+
+        // return 'hello';
+        // return 89.5;
+        // return true;
+        // return new Student ('조용필');
+        // return {name:'sonata',price:20000};
+        // return new Array('Lemon','Apple');
+        // return ['lemon','apple'];
+        // ;return null;
+         return function(message){
+             return message.concat(who);
+         }
+    }    
+    //document.write(outer('한지민')[1]);
+    var morning=outer('박지민');
+    document.write(morning('good morning')+'<br>');
+    var afternoon=outer('박지민');
+    document.write(afternoon('good afternoon')+'<br>');
+
+    var evening=outer('박지민');
+    document.write(evening('good evening')+'<br>');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addClass Demo</title>
+    <script src='js/jquery-3.3.1.js'></script>
+    <script>
+        $(document).ready(
+            function () {
+            //  $('p:eq(1)').addClass('bg');// eq는 0부터시작
+                //$('div p:nth-child(2)').addClass('bg');//1부터 시작
+                $('p:first').addClass('bg mycolor');//공백을 띄어 여러개 클라스를 줄 수도 있음
+
+            }
+        );
+    </script>
+    <style type='text/css'>
+        .bg{
+            background-color: yellow;
+        }
+        .mycolor{color:red;}
+    </style>
+</head>
+<body>
+    <div>
+        <p>jQuery</p>
+        <p>Angular AngularJS</p>
+        <p>Vue.js</p>
+        <p>Backbone.js</p>
+        <p>React</p>
+    </div>
+</body>
+</html>

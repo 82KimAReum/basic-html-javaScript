@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form1 demo</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+            $(function(){
+               //$('select').change(function(){
+                  //var idx = document.getElementsByTagName('select')[0].selectedIndex;
+                  //alert(document.getElementsByTagName('select')[0].options[idx].value);
+                  //alert($(':selected').val());
+               $("input[type='button']").click(function(){
+                  var str = '';
+                  $(':selected').each(function(){
+                     str += $(this).val() + ',';
+                  });
+                  alert(str.substring(0, str.length - 1));
+               });
+            });
+         </script>
+
+</head>
+<body>
+  
+  Editor : 
+  <select multiple size='5'>
+     <option>--선택--</option>
+     <option value='메모장'>메모장</option>
+     <option value='VIM'>VIM</option>
+     <option value='Emacs'>Emacs</option>
+     <option value='Eclipse'>Eclipse</option>
+     <option value='VSCode'>Visual Studio Code</option>
+     <option value='Sublime'>Sublime Text</option>
+     <option value='Editplus'>Editplus</option>
+  </select>
+  <input type='button' value='확인' />
+    
+    
+</body>
+</html>

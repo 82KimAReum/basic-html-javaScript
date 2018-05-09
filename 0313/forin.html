@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for ~ in demo</title>
+</head>
+<body>
+    <script>
+        var arr = ["HTML","CSS3","JavaScript","jQuery","AngularJS","node.js","servlet","JSP"];
+        // for (var i=0; i<arr.length; i++){
+        //     document.write(arr[i]+'<br>');
+        // }
+            
+        // for (str in arr){
+        //     document.write(str+"<br>");//in이 참인것만 뽑음
+        // }
+
+        var student={
+            name:'한지민',
+            id:'1101',
+            kor:90,eng:89,mat:78,edp:100
+        }
+        for(str in student){
+            document.write(str +'--->');//property만 뽑음//name-->
+            document.write(student[str]+'<br>');//한지민
+        }
+        documetn.write('<br>');
+        for(str in Math){
+            document.write(str+'<br>');
+        }
+
+
+
+    </script>
+</body>
+</html>

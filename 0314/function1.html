@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function Demo</title>
+</head>
+<body>
+    <script>
+        var funName=null;
+        funName=new Function('a','b',"return a+b;");
+        document.write(funName(5,9)+"<br>"    );
+
+         funName=new Function('a','b',"return a-b;");
+        document.write(funName(5,9)  +"<br>"   );
+
+
+         funName=new Function('a','b',"return a*b;");
+        document.write(funName(5,9)  +"<br>"   );
+
+         funName=new Function('a','b',"return a/b;");
+        document.write(funName(5,9)  +"<br>"   );
+
+        var aaa=funName;
+        document.write(aaa(100,6));
+
+    </script>
+</body>
+</html>

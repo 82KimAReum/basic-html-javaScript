@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>jQuery UI demo</title>
+   <link rel='stylesheet' type='text/css' href='css/jquery-ui.css'>
+   <script src='js/jquery-1.12.4.js'></script>
+   <script src='js/jquery-ui.js'></script>
+   <script>
+      $(function(){
+         $('button').click(function(){
+            var myease = $(this).attr('data-ease');
+            $('div').slideUp(1000, myease, function(){//선택된 요소의 높이를 줄여 감춤
+               $(this).slideToggle();//요소를 슬라이드 효과로 감추거나 보여줌
+            });
+         });
+      });
+   </script>
+</head>
+<body>
+       <a href='https://jqueryui.com/'>UI down</a>
+   <div>
+      <img src='images/ease.png' width="250" height="250" />
+   </div>
+   <button data-ease="easeOutQuart" class="ui-button">easeOutQuart</button>
+   <button data-ease="easeInOutElastic"class="ui-button">easeInOutElastic</button>
+   <button data-ease="easeOutBack"class="ui-button">easeOutBack</button>
+   <button data-ease="easeOutBounce"class="ui-button">easeOutBounce</button>
+</body>
+</html>

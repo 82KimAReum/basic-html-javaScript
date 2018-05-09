@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-selector Demo</title>
+    <script src='js/jquery-3.3.1.js'></script>
+    <script>
+        $().ready(function(){
+            $("a[href *= 'apache']").css('background-color','yellow');//중에 apache가 있으면
+            $("a[href ^= 'mailto']").css('background-color','cyan');//mailto로 시작하면
+            $("a[href $= 'html']").css('background-color','lime');//html로 끝나면
+        });
+    </script>
+</head>
+<body>
+    <a href='http://httpd.apache.org'>apache Web Server</a>
+    <a href='https://www.naver.com/index.html'>Naver</a>
+    Contact <a href='mailto:aaa@aaa.com'>me</a>
+
+    
+</body>
+</html>

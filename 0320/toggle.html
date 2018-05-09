@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>toggle() demo</title>
+    <script src='js/jquery-1.8.3.js'></script>
+    <script>
+            $(function(){
+               $('input').toggle(function(){
+                  $('*').addClass('bg');
+               }, function(){
+                  $('*').removeClass('bg');
+               });
+               // $('input').toggle(
+               //    function(){
+               //       $('img').attr('src', 'images/apple.jpg');
+               //    },
+               //    function(){
+               //       $('img').attr('src', 'images/banana.jpg');
+               //    },
+               //    function(){
+               //       $('img').attr('src', 'images/grapes.jpg');
+               //    },
+               //    function(){
+               //       $('img').attr('src', 'images/mango.jpg');
+               //    }
+               // );
+            });
+         </script>
+    <style type='text/css'>
+        .bg{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+        <input type='button'value='Apple'>
+        <input type='button'value='Banana'>
+        <input type='button'value='Grape'>
+        <input type='button'value='Mango'>
+        <p><img src='images/jimin.jpg'></p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>next() prev() DEMO</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('li:eq(1)').css('color','red');
+            $('li:eq(1)').next().css('color','green');
+            //$('li:first').css('background-color','yellow');
+            var start= $('li:first');
+            var prev=null;
+           $('input').click(function(){
+                 start.css('background-color','yellow');
+                 end=start.prev(); 
+                start=start.next();
+                end.css('background-color','white');
+              
+              
+              
+              
+           });
+        });
+        
+    </script>
+    <style type='text/css'>
+       
+    </style>
+</head>
+<body>
+        <h1>성공하는 사람들의 7가지 습관</h1>
+        <ul>
+            <li>습관1: 자신의 삶을 주도하라</li>
+            <li>습관2: 끝을 생각하며 시작하라</li>
+            <li>습관3: 소중한 것을 먼저하라</li>
+            <li>습관4: 윈 - 윈을 생각하라</li>
+            <li>습관5: 먼저 이해하고 다음에 이해시켜라</li>
+            <li>습관6: 시너지를 내라</li>
+            <li>습관7: 끊임없이 쇄신하라</li>
+
+        </ul>
+        <input type='button' value='NEXT'>
+        <input type='button' value='PREV'>
+
+</body>
+</html>

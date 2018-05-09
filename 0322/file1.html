@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>File API와 Drag &amp; Drop을 이용한 데모</title>
+   <style type='text/css'>
+      #catcher {
+         width:400px; height:200px;
+         border : 1px solid #000;
+      }
+   </style>
+   <script>
+      window.addEventListener('load', setup, false);
+      function setup(){
+         var catcher = document.querySelector('#catcher');
+         catcher.addEventListener('dragenter', function(evt){
+            this.style.border = '3px dotted red';
+         }, false);
+         catcher.addEventListener('dragover', function(evt){
+            evt.preventDefault();
+         }, false);
+         catcher.addEventListener('drop', function(evt){
+            evt.preventDefault();
+            var files = evt.dataTransfer.files;
+            var str = '';
+            for(var i = 0 ; i < files.length ; i++){
+               str += '<h3>' + (i + 1) + '번째 파일 정보</h3>';
+               str += '<ul>';
+               for(var key in files[i]){
+                  if(key =='size'){
+                     str += '<li>' + key + " : " + Number(files[i][key]).toLocaleString() + 'bytes</li>';   
+                  }else if(key != 'webkitRelativePath' && key != 'slice'){
+                     str += '<li>' + key + " : " + files[i][key] + '</li>';
+                  }
+               }
+               if(files[i].type.match(/^text/g)){
+                  str += '<li>미리 보기가 지원되는 파일입니다.</li>';
+               }else{
+                  str += '<li>미리 보기가 지원되지 않는 파일입니다.</li>';
+               }
+               str += '</ul>';
+            }
+            document.getElementById('fileinfo').innerHTML = str;
+            this.style.border = '';
+         }, false);
+      }
+   </script>
+</head>
+<body>
+   <h2>파일을 네모 칸 안에 드래그 앤 드랍하세요.</h2>
+   <div id='catcher'></div>
+   <h3>파일 정보</h3>
+   <div id='fileinfo'></div>
+</body>
+</html>

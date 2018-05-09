@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>replaceWith() demo</title>
+   <script src='js/jquery-1.12.4.js'></script>
+   <script>
+      $(document).ready(function(){
+         $('button').click(function(){
+            //$(this).replaceWith('<p>' + $(this).text() + "</p>");
+            $(this).replaceWith('<a href=\'#\'>' + $(this).text() + "</a>"); 
+           $('a').click(function(){
+                //$(this).replaceWith('<p>' + $(this).text() + "</p>");
+                $(this).replaceWith('<button>' + $(this).text() + "</button>");
+            });
+               
+         });
+          
+      });
+   </script>
+</head>
+<body>
+   <button>Apple</button>
+   <button>Grape</button>
+   <button>Mango</button>
+</body>
+</html>

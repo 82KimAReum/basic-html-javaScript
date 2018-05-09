@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+     <!-- external style -->
+     <link rel="stylesheet" type="text/css" href="test_css/style.css"/>
+</head>
+<body>
+
+    
+  
+        <table border="1">
+            <colgroup>
+            <col id='no1'>
+            <col id='no2'>
+            </colgroup>
+            <caption><b>동아리 가입서</b></caption>
+            <tr><td class="center">동아리 명</td><td id='id'>카리스마</td></tr>
+            <tr><td class="center">이름</td><td><input type='text'size="10"></td></tr>
+            <tr><td class="center">학부/학과</td><td><select><option>인터넷 공학부</option>
+                <option>공연예술학부</option>
+                <option>외국어학부</option>
+                <option>컴퓨터 공학과</option>
+                <option>멀티&게임공학과</option>
+                <option>영어영문과</option></select></td></tr>
+            <tr><td class="center">학년</td><td><input type="radio" name='year' vaule='1학년' checked>1학년<input type="radio" name='year' vaule='2학년'>2학년<input type="radio"name='year'  vaule='3학년'>3학년<input type="radio" name='year' vaule='4학년'>4학년</td></tr>
+            <tr><td class="center">주소</td><td><input type='text' size='50'></td></tr>
+            <tr><td rowspan="2" class="center">연락처</td><td><input type="radio" name='tel'  value="집">집<input type="radio" name='tel' value="휴대">휴대</td></tr>
+            <tr><td ><input type="text" size="3"> - <input type="text" size="4" > - <input type="text" size="4" ></td></tr>
+            <tr><td class="center">가입동기</td><td><textarea  cols="50" rows="3" placeholder="카리스마의 어떤 점을 보고 가입하고 싶으셨나요?"></textarea></td></tr>
+            <tr><td class="center">자기 소개</td><td><textarea cols="50" rows="6">당신은 어떤 사람인가요?</textarea></td></tr>
+            <tr class="center"><td colspan="2"><input type="button" value="가입하기" class='bu'><input type="button"value="취소하기" class='bu'></td></tr>
+        </table>
+     
+
+</body>
+</html>

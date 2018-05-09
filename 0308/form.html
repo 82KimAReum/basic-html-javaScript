@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    
+    <title>form tag Demo</title>
+</head>
+<body>
+    
+    <form action="login.jsp" method="get">
+        <pre>
+        method는 get방법(default)과  post방법이 있다. get방법은 보안과 보낼 수 있는 용량 문제가 생김
+        HTTP request Packet 에서 get방법은 내용이 header안에 들어가고 post방식은 body안에 들어간다.
+       </pre> 
+       id: <input type ="text" name ="userid"/>
+        pwd: <input type ="password" name ="userpwd"/>
+        
+        <input type ="submit" value="전송"/>
+    </form>
+
+
+
+</body>
+</html>

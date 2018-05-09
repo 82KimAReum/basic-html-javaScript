@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>attr demo</title>
+   <script src='js/jquery-3.3.1.js'></script>
+   <script>
+      $(document).ready(function(){
+         alert($('img').attr('src'));  //get
+         $("input[type='button']").bind('click', function(){
+            $('img').attr({'src':'images/mango.jpg', 'alt' : '망고 이미지'});  //set
+         });
+      });
+   </script>
+</head>
+<body>
+   <p><input type='button' value='change' /></p>
+   <img src="images/apple.jpg" alt="사과 이미지" />
+</body>
+</html>

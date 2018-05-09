@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>each() DEMO</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+             
+           $('p').each(function(idx){//idx = p인덱스
+            //    alert($(this).attr('id'));
+            $(this).attr('id',idx);//set // 각 p에 루프를 돌려 id 할당
+
+           });
+           
+        //    $('input').click(function(){
+        //        //alert($('p:eq(1)').attr('id'));
+        //        alert($('#1').text());
+        //    });
+
+        // var p=$('p');
+        // //var pArr=document.getElementsByTagName('p');
+        // //alert(p.size());
+        // for(var i=0; i<p.size();i++){
+        //     alert(p.get(i).innerHTML);
+        // }
+        // 
+        $('p').each(function(){
+            alert($(this).text());
+           });
+           
+       });
+    </script>
+
+</head>
+<body>
+  <p >HTML</p>
+  <p>CSS</p>
+  <p >JavaScript</p>
+  <input type='button' value='click'>
+
+
+</body>
+</html>

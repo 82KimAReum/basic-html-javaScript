@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this demo</title>
+    <script>
+        //window.onload=setup;
+        window.addEventListener('load',setup,false);
+        function setup(){
+            //포커스 잃으면
+            alert(this);//window
+            document.getElementById('firstName').onblur=myblur;
+        }
+        function myblur(){
+            document.getElementById('result').innerHTML=
+            //document.getElementById('firstName').value;
+            this.value;//이벤트가 발생한 객체 this
+            //alert(this.id);//firstName
+        }
+    </script>
+</head>
+<body>
+    First Name: <input type='text' id='firstName'><br>
+    Last Name:  <input type='text' id='lastName'><br>
+    <output id='result'></output>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM Demo</title>
+    <script>
+        window.addEventListener('load',setup,false);
+        function setup() {
+            var array= document.getElementsByTagName('p');
+            array[0].addEventListener('click',myOpen,false);
+            array[1].addEventListener('click',myClose,false);
+        }
+        var w=null;
+        function myOpen(e) {
+            var feature='width=300,height=300,top=300,left=300';
+            w=window.open('https://www.naver.com','_blank',feature);
+        }
+        function myClose(e) {
+            w.close();
+        }
+    </script>
+</head>
+<body>
+    <p>네이버 열기</p>
+    <p>네이버 닫기</p>
+</body>
+</html>

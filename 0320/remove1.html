@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>remove() empty() DEMO1</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+            //$('div p:first').remove();
+            $('div p:first').empty();
+            $('div p:first').text('Grape');
+
+        });
+    </script>
+
+</head>
+<body>
+    <div id='container'>
+        <p>Apple</p>
+        <p>Mango</p>
+        <p>Cherry</p>
+
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form demo</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+           $("input[type='button']").click(function(){
+               alert($(':checked').val());
+           })
+
+        });
+    </script>
+
+</head>
+<body>
+    Gender:<br>
+    <input type='radio' name='gender'value='남성'>남성<br>
+    <input type='radio' name='gender'value='여성'>여성<br>
+    <input type='button' value='확인'><br>
+    
+    
+</body>
+</html>

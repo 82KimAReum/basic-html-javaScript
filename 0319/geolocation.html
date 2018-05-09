@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Geolocation tag demo</title>
+</head>
+<body>
+        <button type='button' onclick="getPosition()">Get Position</button>
+        <output id='result'></output>
+    <script>
+        var result= document.getElementById('result');
+        function getPosition(){
+            
+            if(window.navigator.geolocation){
+               window.navigator.geolocation.getCurrentPosition(showPositon);
+            }else{
+               result.innerHTML="<span style='color:red'>Not Supported</span>";
+            }
+        }
+
+        function showPositon(positon){
+            result.innerHTML='위도: '+positon.coords.latitude+' , 경도: '+positon.coords.longitude;
+            
+        }
+    </script>
+</body>
+</html>

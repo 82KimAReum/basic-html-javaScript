@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM Demo</title>
+    <script>
+        window.addEventListener('load',setup,false);
+        function setup(){
+            document.getElementById('btnOpen').addEventListener('click',myOpen,false);
+            document.getElementById('btnMove').addEventListener('click',myMove,false);
+
+        }
+        var myWin=null;
+        function myOpen() {
+            var feature='width=300,heigth=300,left=500,top=200';
+            myWin=window.open('bom.html',null,'width=10,height=10');
+        }
+        function myMove() {
+            var su=document.getElementById('txtMove').value;
+            myWin.moveTo(su,su);
+            myWin.resizeBy(50,50);//크기 커짐
+            setTimeout(myMove,500);//0.5초마다
+        }
+    </script>
+</head>
+<body>
+    <button type='button'id='btnOpen'>OPEN</button><br>
+    <input type='number'id='txtMove'>
+    <input type='button' value='START'id='btnMove'>
+</body>
+</html>

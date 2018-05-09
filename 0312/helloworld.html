@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hello JavaScipt</title>
+    <style type='text/css'>
+    input[type='text']{
+        width:100px;
+        border: 1px dotted #abcdef;
+        
+    }
+    input[type='button']{
+        background-color:yellow;    
+        font-size:1.5em;
+
+    }
+    output{
+        width:200px;
+        border:none;
+        font-size:1.2em;
+        color:navy;
+
+    }
+    </style>
+    <script>
+        window.onload = setup;
+        function  myClick(){
+            var myform =document.forms[0];
+            var answer = myform.firstName.value+''+
+            myform.lastName.value;
+            document.getElementsByTagName('output')[0].innerHTML = 'Good morning<br/>'+answer +'님!';
+        }
+    </script>
+
+</head>
+<body>
+
+    <h2>이름을 입력해 주세요.</h2>
+    <form>
+        <p>
+            <label for ='lastName'>Last Name: </label>
+            <input type='text' name='lastName'/>
+        </p>
+        <p>
+            <label for ='firstName'>First name: </label>
+            <input type='text' name ='firstName'/>
+        </p>
+        <p><input type='button' value='Click me' onclick="myClick()"/></p>
+        <hr/>
+        <output></output>
+
+    </form>
+
+</body>
+</html>

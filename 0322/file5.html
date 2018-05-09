@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>File API와 Drag &amp; Drop을 이용한 데모</title>
+   <style type='text/css'>
+      #catcher {
+         width:400px; height:200px;
+         border : 1px solid #000;
+         overflow:auto;margin-top:10px;
+      }
+      #myprogress {
+         display:none;
+      }
+   </style>
+   <script>
+      window.addEventListener('load', setup, false);
+      function setup(){
+         var catcher = document.querySelector('#catcher');
+         catcher.addEventListener('dragenter', function(evt){
+            this.style.border = '3px dotted red';
+         }, false);
+         catcher.addEventListener('dragover', function(evt){
+            evt.preventDefault();
+         }, false);
+         catcher.addEventListener('drop', function(evt){
+            evt.preventDefault();
+            var files = evt.dataTransfer.files;
+            if(!isPreview(files[0])){
+               catcher.innerHTML = "<div style='color:red'>미리 보기가 지원되지 않는 파일입니다.</div>";
+               return;
+            }
+            document.getElementById('title').innerHTML = files[0].name;
+            var fileReader = new FileReader();
+            fileReader.addEventListener('error', function(error){
+               catcher.innerHTML = "<div style='color:red'>" + error + "</div>";
+               return;
+            },false);
+            fileReader.addEventListener('load', function(evt){
+               if(files[0].type.match(/^text/g)){
+                  var contents = fileReader.result;
+                  contents = contents.replace(/</g, "&lt;");
+                  contents = contents.replace(/>/g, "&gt;");
+                  contents = contents.replace(/\n/g, '<br />');
+                  catcher.innerHTML = contents;
+               }else if(files[0].type.match(/^image/g)){
+                  if(catcher.childNodes.length){
+                     catcher.removeChild(catcher.firstChild);
+                  }
+                  var img = document.createElement('img');  //<img />
+                  img.setAttribute('src', fileReader.result);
+                  catcher.appendChild(img);
+               }
+            },false);
+            var progress = document.querySelector('#myprogress');
+            fileReader.addEventListener('loadstart', function(evt){
+               progress.style.display = 'inline';
+               if(evt.lengthComputable){
+                  progress.max = evt.total;
+               }
+            }, false);
+            fileReader.addEventListener('loadend', function(evt){
+               //progress.style.display = 'none';
+            }, false);
+
+            fileReader.addEventListener('progress', function(evt){
+               if(evt.lengthComputable){
+                  progress.value = evt.loaded;
+               }
+            },false);
+
+            if(files[0].type.match(/^text/g)) fileReader.readAsText(files[0]);
+            else if(files[0].type.match(/^image/g)) fileReader.readAsDataURL(files[0]);
+            else return;
+            this.style.border = '';
+         }, false);
+      }
+      function isPreview(file){
+         //console.log(file.name.substring(file.name.lastIndexOf('.')));
+          if(file.type.match(/^text/g)) return true;
+          else if(file.type.match(/^image/g)) return true;
+          else if(file.name.substring(file.name.lastIndexOf('.')) == '.dat') return true;
+          else if(file.name.substring(file.name.lastIndexOf('.')) == '.js') return true;
+          else return false;
+      }
+   </script>
+</head>
+<body>
+   <h2>파일을 드래그 앤 드랍하세요.</h2>
+   File name : <span id='title'></span>
+   <p><progress id='myprogress'></progress></p>
+   <div id='catcher'></div>
+</body>
+</html>

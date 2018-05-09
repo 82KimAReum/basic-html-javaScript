@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>opener, self Demo</title>
+    <script>
+        window.onload=function(){
+            document.getElementsByTagName('button')[0].onclick=myclick;
+
+        }
+        function myclick() {
+            document.getElementById('username').innerHTML='';
+            document.getElementById('userage').innerHTML='';
+            document.getElementById('usergender').innerHTML='';
+            document.getElementById('usertel').innerHTML='';
+            document.getElementById('useremail').innerHTML='';
+            window.open('resume.html',null,'width=600,height=330,left=1000,top=500');
+        }
+    </script>
+</head>
+<body>
+    <h1>회원 정보 창</h1>
+    <ul>
+        <li>Name: <span id='username'></span> </li>
+        <li>Age:<span id='userage'></span>  </li>
+        <li>Gender: <span id='usergender'></span> </li>
+        <li>Tel: <span id='usertel'></span> </li>
+        <li>Email: <span id='useremail'></span> </li>
+
+
+    </ul>
+    <button type='button'>회원정보입력</button>
+</body>
+</html>

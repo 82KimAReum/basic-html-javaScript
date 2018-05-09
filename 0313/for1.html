@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Calendar</title>
+    <style type='text/css'>
+        div {
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        table{
+            width:400px; margin:50px auto;
+            border-collapse: collapse;
+            border-spacing: 0px;
+            padding: 10px;
+        }
+        td{
+            text-align: center;
+            border-width: 1px; border-style: solid;
+        }
+        th{
+            background-color: blueviolet;
+            color:white;
+        }
+        td,th{
+            line-height: 30px;
+        }
+    </style>
+    <script>
+        function myChange() {
+            var idx = document.getElementById('selYear').selectedIndex;
+            var year = document.getElementById('selYear').options[idx].value;
+            idx = document.getElementById('selMonth').selectedIndex;
+            var month = document.getElementById('selMonth').options[idx].value;
+            var str = "<h1>" + year + "년 " + month + "월</h1>";
+            //document.getElementsByTagName('output')[0].innerHTML = label;
+            //달력을 그리려면
+            //그 달 일이 무슨 요일인지, 그 달이 며칠까지인지 알아야 함
+            var space = getFirstDay(year, month);
+            var lastday = getLastDay(year, month);
+            var count=0;
+            var arr=['일','월','화','수','목','금','토'];
+            str+="<table border='1'>";
+            str+="<htead><tr>"
+            for(var i=0; i<7; i++){
+                str +="<th>"+arr[i]+"</th>";
+            }
+            str+="</tr></thead>";
+
+            str+="<tbody>";
+            str+="<tr>";
+            for (i=0; i<space; i++){
+                str +="<td>&nbsp; </td>";count++;
+            }
+            for(i=1;i<=lastday; i++){
+                str +="<td>"+i+"</td>";count++;
+                if(count %7==0){str+="</tr><tr>";count=0;}
+            }
+            if(count !=0){
+                 for(i=0; i<(7-count);i++){
+                str +="<td>&nbsp;</td>";
+
+            }
+            }
+           
+           
+            str+="</tr></tbody></tabel>";
+            document.getElementsByTagName('output')[0].innerHTML = str;
+        }
+
+        function getFirstDay(year, month) { //첫 날 요일 일아내기
+            var now = new Date(year, month - 1, 1, 0, 0, 0, 0);
+            return now.getDay(); //일요일 0부터 시작
+        }
+        function getLastDay(year, month) {
+            var lastday = null;
+            switch(parseInt(month)) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12: lastday = 31; break;
+                case 4: case 6: case 9: case 11: lastday = 30; break;
+                case 2:
+                    if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) { //윤년이라면
+                        lastday = 29; break;
+                    } else {
+                        lastday = 28; break;
+                    }
+            }
+            return lastday;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        Year :
+        <select id='selYear'>
+            <option>--년도 선택--</option>
+            <script>
+                for(var i=1980; i<=2050; i++) {
+                    document.write("<option value='" + i + "'>");
+                    document.write(i);
+                    document.write("</option>");
+                }
+            </script>
+        </select>
+        Month :
+        <select onchange="myChange()" id='selMonth'>
+            <option>--월 선택--</option>
+            <script>
+                for(var i=1; i<=12; i++) {
+                    document.write("<option value='" + i + "'>");
+                    document.write(i);
+                    document.write("</option>");
+                }
+            </script>
+        </select>
+    </div>
+    <hr/>
+    <output></output>
+
+</body>
+</html>

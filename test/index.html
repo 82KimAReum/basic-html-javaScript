@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>사원관리프로그램</title>
+    <link rel='stylesheet' href='css/indexStyle.css' type="text/css">
+    <script src='js/main.js'></script>
+    <script src='js/main1.js'></script>
+    <script src='js/employee.js'></script>
+    <script src='js/input.js'></script>
+    <script src='js/sort.js'></script>
+    <script src='js/calc.js'></script>
+    <script src='js/output.js'></script>
+</head>
+<body>
+    <h1>사원관리프로그램</h1>
+    <div id='outline'>
+        <div>*필수입력항목</div>
+        <hr/>
+        <table>
+            <form>
+            <tr>
+                <td class="head" name='id'>사번: </td>
+                <td><input class="thead"type="text"id='txtId'> *</td>
+            </tr>
+            <tr>
+                <td class="head"name='name'>이름: </td>
+                <td><input class="thead"type="text"id='txtName'> *</td>
+            </tr>
+            <tr>
+                <td class="head"name='pay'>기본급: </td>
+                <td><input class="thead"type="number"id='txtPay'min='1'max='4'> * </td>
+            </tr>
+            <tr>
+                <td class="head"name='time'>야간수당: </td>
+                <td><input class="thead"type="number"id='txtTime'min='1'max='4'> * </td>
+            </tr>
+            <tr>
+                <td class="head"name='fcount'>가족수: </td>
+                <td><input class="thead"type="number"id='txtFcount'min='1'max='5'> * </td>
+            </tr>
+            </form>
+        </table>
+        <hr/>
+        <p>
+                <input type="button"value='입력하기'id='btnInput'>
+                <input type="button"value='계산하기'id='btnCalc'>
+                <input type="button"value='정렬하기'id='btnSort'>
+                <input type="button"value='결과보기'id='btnResult'>
+        </p>
+    </div>
+    <!-- <script>
+        var id=document.getElementById('txtId').value;
+       if(id.charCodeAt(0)<65 || id.charCodeAt(0)>71){
+
+        }
+    </script> -->
+</body>
+</html>

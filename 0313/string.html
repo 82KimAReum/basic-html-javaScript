@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String object demo</title>
+</head>
+<body>
+    <script>
+        //substr(),substirng(),slice()    
+        var str = "(135-080) 서울시 강남구 역삼동";
+        document.write('substr = '+ str.substr(10,11)+'<br>');//080
+        document.write('substring = '+ str.substring(10,21)+'<br>');//080
+        document.write('slice = '+ str.slice(10,21)+'<br>');//080
+       
+        document.write('<br>');//080
+        document.write('substr = '+ str.substr(10)+'<br>');//080
+        document.write('substring = '+ str.substring(10)+'<br>');//080
+        document.write('slice = '+ str.slice(10)+'<br>');//080
+          document.write('<br>');
+        str = new Date().toString();
+        document.write(str);
+        document.write('<br>');
+        var str = new Date().toLocaleString();
+       
+        var arr= str.split(". ",3);
+       document.write(arr[0]+'년'+arr[1]+'월'+arr[2]+'일');//2018. 3. 13. 오후 3:23:24
+    </script>
+</body>
+</html>

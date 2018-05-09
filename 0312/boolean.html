@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function send(){
+            var f= document.forms[0];
+            if(!f.username.value){
+                alert('이름이 빠졌습니다.');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Name: <input type = 'text' id ='username'>
+        <input type ='button' value='전송' onclick='send()'/>
+        
+    </form>
+    
+</body>
+</html>

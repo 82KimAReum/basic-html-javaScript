@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scope demo2</title>
+</head>
+<body>
+    <script>
+        // var a=true;
+        // var b=a;
+        // // 값 복사
+        // a = false;
+        
+        // document.write(b);
+        // var arr=[1,2,3,4];
+        // var arr1=arr;
+        // arr[0]=100;
+        // document.write(arr1[0]);//주소복사
+        var su ='global_A'
+        fun1();
+        function fun1(){
+            var su = 'local_A';
+            document.write(su + '<br>');7
+            fun2();
+        }
+        document.write(su +'<br>');
+        
+        function fun2(){
+            var su = 'local_B';
+            document.write(su+'<br>');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cookie DEMO</title>
+    <script>
+        window.addEventListener('load',setup,false);
+        function setup(){
+            if(navigator.cookieEnabled){
+                //alert('쿠키지원o');
+               
+                 //removeCookie('irum');
+                    var irum = readCookie('irum');
+                    console.log('irum = ' + irum);
+                if(irum){
+                    
+                    document.querySelector('#result').innerHTML=irum;
+                }else{
+                    setCookie('irum','michael');
+                    document.querySelector('#result').innerHTML='please re-visit.';
+                }
+            }else{
+                alert('쿠키지원x');
+               return;
+            }
+        }
+        
+        function removeCookie(key) {
+            //이전시간으로 설정함
+            //var expiredate =new new Date(2018, 2, 23, 3, 35, 0);//2018-3-23T2:30:0
+            console.log(document.cookie);
+            var cookie= document.cookie;
+        //    if(cookie.split('=')[0]==key){
+        //         document.cookie=key + '=;expires=-1; path =/0323/';
+        //     }
+            var idx = cookie.indexOf(';');
+            var value = '';
+            if(idx > 0){   // ;갯수가 1개 이상이면
+                var array = cookie.split(';');
+                for(var i = 0 ; i < array.length ;i++){
+                    if(array[i].split('=')[0].trim() == key) {
+                        document.cookie = key + '=; expires=-1';
+                    }
+                }
+            }
+            
+        }
+            
+        function readCookie(key) {
+        //     var cookie =document.cookie;//key= value;
+        //     if(cookie.indexOf(';'<0))return null;//cookie에 ; 이 있니?
+        //    else{
+        //     var value = cookie.split('=')[1];
+        //     return decodeURI(value);
+        //    }
+            var cookie = document.cookie;  //username=Michael;irum=한지민;
+            var idx = cookie.indexOf(';');
+            var value = '';
+            if(document.cookie.length > 0 || idx > 0){   // ;갯수가 1개 이상이면
+                var array = cookie.split(';');
+                for(var i = 0 ; i < array.length ;i++){
+                if(array[i].split('=')[0].trim() == key) value = array[i].split('=')[1];
+                }
+            }
+            return decodeURI(value);
+        }
+        
+        function setCookie(key,value) {
+            var expiredate =new Date();
+            expiredate.setTime(expiredate.getTime() + 1000*60*60);
+            document.cookie= key +'='+ encodeURI(value) +'; expires ='+
+                                    expiredate.toUTCString()+'; path =/0323/';
+        }
+    </script>
+</head>
+<body>
+    <div id='result'>텍스트텍스트</div>
+</body>
+</html>

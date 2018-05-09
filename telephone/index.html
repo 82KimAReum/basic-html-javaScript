@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>전화요금 관리 프로그램</title>
+    <script src='js/telephone.js'></script>
+    <script src='js/main.js'></script>
+    <script src='js/input.js'></script>
+    <script src='js/calc.js'></script>
+    <script src='js/sort.js'></script>
+    <script src='js/output.js'></script>
+
+</head>
+<body>
+    <h1>3월 전화요금 명세서</h1>
+    <form>
+        <fieldset>
+            <legend>각각의 값을 입력해 주세요.</legend>
+            <table>
+                <tr>
+                    <th>구분: </th>
+                    <td><select id='selGubun'>
+                        <option value=''>--선택--</option>
+                        <option value='1'>1(영업용)</option>
+                        <option value='2'>2(관청용)</option>
+                        <option value='3'>3(가정용)</option>
+
+                    </select></td>
+                </tr>
+                <tr>
+                    <th>전화번호: </th>
+                    <td><input type='tel'id='usertel'></td>
+                </tr>
+                <tr>
+                    <th>이름: </th>
+                    <td><input type='text'id='username'></td>
+                </tr>
+                <tr>
+                    <th>통화량: </th>
+                    <td><input type='number'id='amount'></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type='button'value='Input' id='btnInput'>
+                        <input type='button'value='Calc' id='btnCalc'>
+                        <input type='button'value='Sort' id='btnSort'>
+                        <input type='button'value='Output' id='btnOutput'>
+
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+    <hr/>
+    <table border="1">
+        <thead>
+            <tr style='background-color:navy;color:white';>
+                <th>구분</th><th>전화번호</th><th>이름</th>
+                <th>기본요금</th><th>통화료</th><th>세금</th>
+                <th>합계</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+</body>
+</html>

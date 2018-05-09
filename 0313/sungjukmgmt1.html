@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>성적관리프로그램 - 입력창</title>
+   <style type='text/css'>
+      fieldset {
+         width:350px; margin : 30px auto;
+      }
+      fieldset  table {  margin-left: auto;margin-right: auto;}
+      h1 { text-align:center;}
+      tr:last-child { text-align: center;}
+      th { background-color: navy ; color :white}
+   </style>
+   <script src='js/student.js'></script>
+   <script src='js/util.js'></script>
+   <script src='js/add.js'></script>
+   <script src='js/calc.js'></script>
+   <script src='js/output.js'></script>
+   <script src='js/sort.js'></script>
+</head>
+<body>
+   <h1>성적 관리 프로그램</h1>
+   <fieldset> <legend>성적을 입력해 주세요(각 항목 필수)</legend>
+   <form>
+      
+       <table>
+         
+      
+         <tr>
+            <th>학번 : </th>
+            <td><input type='text' name='hakbun' required/></td>
+         </tr>
+         <tr>
+            <th>이름 : </th>
+            <td><input type='text' name='irum' required /></td>
+         </tr>
+         <tr>
+            <th>국어 : </th>
+            <td><input type='text' name='kor' required /></td>
+         </tr>
+         <tr>
+            <th>영어 : </th>
+            <td><input type='text' name='eng' required /></td>
+         </tr>
+         <tr>
+            <th>수학 : </th>
+            <td><input type='text' name='mat' required /></td>
+         </tr>
+         <tr>
+            <th>전산 : </th>
+            <td><input type='text' name='edp' required /></td>
+         </tr>
+         <tr>
+            <td colspan='2'>
+               <input type='button' value='학생추가' id='btnAdd' />
+               <input type='button' value='계산하기'  id='btnCalc'/>
+               <input type='button' value='정렬하기'  id='btnSort'/>
+               <input type='button' value='출력하기'  id='btnOutput'/>
+            </td>
+         </tr>
+      </table>
+    </fieldset>
+ 
+</form>
+   <hr/>
+
+   <output>
+        <table border='1'>
+            <thead>
+                <tr>
+                    <th>학번</th><th>이름</th><th>국어</th>
+                    <th>영어</th><th>수학</th><th>전산</th>
+                    <th>총점</th><th>평균</th><th>평점</th>
+                </tr>
+            </thead>
+            <tbody id='result'>
+                
+            </tbody>
+        </table>
+
+   </output>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>op demo</title>
+</head>
+<body>
+    
+    <script>
+        var now=new Date();
+        document.write(now);
+        function Student(hakbun,irum,kor,eng,mat,edu){
+           hakbun=hakbun;
+           irum=irum;
+           kor=kor;
+           eng=eng;
+           mat=mat;
+           edu=edu;
+            
+           this.getKor=function(){
+               return kor;
+           }
+        }
+        var chulsu = new Student('1101','김철수',100,70,80,90);
+        //document.write(chulsu.kor);
+        //정의 할때 this를 안쓰면 프라이벳 
+        //document.write(chulsu.getKor());
+       // var sum =chulsu.kor+ chulsu.eng+chulsu.mat +chulsu.edp;
+
+
+    </script>
+</body>
+</html>

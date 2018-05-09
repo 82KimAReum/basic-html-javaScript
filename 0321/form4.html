@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form4 demo</title>
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        // 체크박스 selector
+        $(function(){
+            $('button').click(function(){
+        //    var arrary=document.getElementsByName('skill');
+        //    for(var i=0;i<array.length; i+=){
+        //        arrary[i].checked=true;
+        //    }
+                $(':checkbox').attr('checked','checked');
+            });
+        
+        });
+    </script>
+</head>
+<body>
+    <form>
+        Skill : <br>
+        <input type="checkbox" name='skill'value='HTML5'>HTML5<br>
+        <input type="checkbox" name='skill'value='CSS3'>CSS3<br>
+        <input type="checkbox" name='skill'value='JavaScript'>JavaScript<br>
+        <input type="checkbox" name='skill'value='jQuery'>jQuery<br>
+        <input type="checkbox" name='skill'value='Node.js'>Node.js<br>
+        <input type="checkbox" name='skill'value='React'>React<br>
+        <input type="checkbox" name='skill'value='Angiar'>Angiar<br>
+        <input type="checkbox" name='skill'value='Vue.js'>Vue.js<br>
+        <input type="checkbox" name='skill'value='express.js'>express.js<br>
+     <button  type="button">모두선택</button>
+        
+    </form>
+</body>
+</html>

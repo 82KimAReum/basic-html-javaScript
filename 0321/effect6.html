@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>effect5 demo</title>
+   <script src='js/jquery-1.12.4.js'></script>
+   <script>
+        $(function(){
+            $('a').click(function(){
+                // $('div').animate({
+                //     opacity:'0.1',
+                //     left: '+=100',
+
+                // },1000);
+                $('div').animate({
+                    top:'+=10',
+                    left: '+=50',
+                  
+                },1000);
+
+            });
+        });
+     </script>
+     <style type='text/css'>
+       div{
+           background-color: red;
+           width: 100px;
+           height: 100px;
+           position: relative;
+       }
+     </style>
+</head>
+<body>
+    <p><a href="#">animate</a></p>
+    <div></div><br>
+    <div></div><br>
+    <div></div>
+</body>
+</html>

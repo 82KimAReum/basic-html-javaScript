@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>remove() empty() DEMO</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+           //$('p>strong').remove();//p자식 strong을 remove()//Elements태그 자체도 사라짐
+            $('p>strong').empty();//<strong></strong>내용은 사라지고 태그는 남아있어 나중에 태그를 사용할수있음
+
+        });
+    </script>
+
+</head>
+<body>
+    <p><strong>strong 텍스트</strong>텍스트텍스트</p>
+    
+    
+</body>
+</html>

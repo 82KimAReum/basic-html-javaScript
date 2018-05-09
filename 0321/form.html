@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(function(){
+            $('select').bind('change',function(){
+                $('span').text($(this).val());
+            });//bind end
+        });
+    </script>
+</head>
+<body>
+    신청자:
+    <select>
+            <option value="성함: "></option>
+        <option value="성함: ">개인</option>
+        <option value="회사명 : ">법인</option>
+    </select>
+    <p><span>이름: </span><input type="text"></p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 최대공약수 최소공배수 -->
+    <script>
+            function calcGcdLcm(first,second){
+               function getGcd(a,b){
+                    var gcm = null;
+                    for (var i=2; i<=a; i++){
+                        if(a % i ==0 && b%i==0)gcm =i;
+                        else continue;
+                    }
+                    return gcm;
+                }
+                var gcd =getGcd(first,second);
+                document.write("GCD = "+gcd);
+                document.write("LCM = "+first/gcd *second/gcd*gcd);
+
+            }
+            var input= prompt('정수 2개 입력');
+            var first= input.split(',')[0];
+            var second= input.split(',')[1];
+            calcGcdLcm(first,second);
+
+
+
+
+    </script>
+</body>
+</html>

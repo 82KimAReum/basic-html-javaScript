@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>form demo</title>
+   <script src='js/jquery-1.12.4.js'></script>
+   <script>
+       //fadeIn() fadeOut() 
+      $(function(){
+         $('button:first').click(function(){
+            $('img').fadeIn(1000);
+         });
+         $('button:last').click(function(){
+            $('img').fadeOut(1000);
+         });
+      });
+   </script>
+   <style type='text/css'>
+      img {
+         width:450px; height:500px;
+        
+         display: none;
+      }
+   </style>
+</head>
+<body>
+   <button>Fade In</button>
+   <button>Fade Out</button>
+   <div><img src='images/jimin.jpg' /></div>
+</body>
+</html>

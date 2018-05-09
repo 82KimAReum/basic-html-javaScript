@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM1 DEMO</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+          $('h1').wrapInner('<u></u>');
+        //$("<a href='http://www.oracle.com'>오라클</a>").insertAfter('a:first');
+        $("<a href='http://www.oracle.com'>오라클</a>").insertBefore('a:eq(1)');
+
+        $("a[href*='google']").remove();
+
+        
+        });
+      
+    </script>
+
+</head>
+<body>
+   <h1>검색 엔진</h1>
+   <a href='https://www.naver.com'>네이버</a>
+   <a href='https://www.daum.net'>다음</a>
+   <a href='http://www.nate.com'>네이트</a>
+   <a href='https://www.google.com'>구글</a>
+   
+</body>
+</html>

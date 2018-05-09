@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>add-Remove Class demo</title>
+   <style type='text/css'>
+      .bg { color:red;background-color: yellow;}
+   </style>
+   <script src='js/jquery-3.3.1.js'></script>
+   <script>
+      var flag = false;
+      $(document).ready(function(){
+         $('button').click(function(){
+             $('div p:nth-child(1)').toggleClass('bg');
+            if(flag){
+               $('div p:nth-child(2)').addClass('bg');
+               flag = false;
+            }else{
+               $('div p:nth-child(2)').removeClass('bg');
+               flag = true;
+            }
+         });
+      });
+   </script>
+</head>
+<body>
+   <button type='button'>Click Me</button>
+   <div>
+      <p class='bg'>jQuery</p>
+      <p class='bg'>AngularJS</p>
+      <p class='bg'>React</p>
+   </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RegExp demo</title>
+</head>
+<body>
+
+
+
+    <!-- 정규식 -->
+    <form>
+        email: <input type='email' name='useremail'/>
+        <output></output>
+        <br/>
+        Phone: <input type='tel' name='usertel'/>
+        <output></output>
+        <input type='button' value='test'id='btnTest'/>
+    
+    </form>
+    <script>
+    window.addEventListener('load',setup);
+    function setup(){
+        document.getElementById('btnTest').addEventListener('click',myclick);
+    }
+    function myclick(){
+
+        var useremail=document.forms[0].useremail.value;
+        var usertel=document.forms[0].usertel.value;
+        var pattern=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+        var pattern1=/^01\d-\d{3,4}-\d{4}$/;
+        var flag=pattern.test(useremail);
+        var flag1=pattern1.test(usertel);
+        var output=document.getElementsByTagName('output')[0];
+        var output1=document.getElementsByTagName('output')[1];
+        if(flag){
+            output.innerHTML="<span style='color:green; font-weight:900'>Success</span>";
+
+        }else{
+            output.innerHTML="<span style='color:red; font-weight:900;font-style:italic'>Failue</span>";
+
+        }
+
+         if(flag1){
+            output1.innerHTML="<span style='color:green; font-weight:900'>Success</span>";
+
+        }else{
+            output1.innerHTML="<span style='color:red; font-weight:900;font-style:italic'>Failue</span>";
+
+        }
+    }
+        
+        </script>
+</body>
+</html>

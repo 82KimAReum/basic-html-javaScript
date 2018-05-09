@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scope Demo</title>
+</head>
+<body>
+    <script>
+        fun1();
+        function fun1(){
+            var su= 'local_A';
+            document.write(su+'<br>');
+            
+            fun2();
+            function fun2(){
+                    su ='local_B'
+                    document.write(su+ '<br>');
+             } 
+              document.write(su);
+        }   
+       
+      
+    </script>
+</body>
+</html>

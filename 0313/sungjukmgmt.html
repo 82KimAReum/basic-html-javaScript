@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>성적관리프로그램 - 입력창</title>
+   <style type='text/css'>
+      fieldset {
+         width:300px; margin : 30px auto;
+      }
+      fieldset > table { width:250px; margin : 30px auto;}
+      h1 { text-align:center;}
+      tr:last-child { text-align: center;}
+      th { background-color: navy ; color :white}
+   </style>
+</head>
+<body>
+   <h1>성적 관리 프로그램</h1>
+   <form action='result.html' method='get'>
+      <fieldset>
+         <legend>성적을 입력해 주세요(각 항목 필수)</legend>
+      <table>
+         <tr>
+            <th>학번 : </th>
+            <td><input type='text' name='hakbun' required/></td>
+         </tr>
+         <tr>
+            <th>이름 : </th>
+            <td><input type='text' name='irum' required /></td>
+         </tr>
+         <tr>
+            <th>국어 : </th>
+            <td><input type='text' name='kor' required /></td>
+         </tr>
+         <tr>
+            <th>영어 : </th>
+            <td><input type='text' name='eng' required /></td>
+         </tr>
+         <tr>
+            <th>수학 : </th>
+            <td><input type='text' name='mat' required /></td>
+         </tr>
+         <tr>
+            <th>전산 : </th>
+            <td><input type='text' name='edp' required /></td>
+         </tr>
+      </fieldset>
+         <tr>
+            <td colspan='2'>
+               <input type='submit' value='전송'  />
+               <input type='reset' value='다시하기' />
+            </td>
+         </tr>
+      </table>
+   </form>
+</body>
+</html>

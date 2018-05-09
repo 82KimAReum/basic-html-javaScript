@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <script>
+      var defaultColor = 'white';
+      var defaultFontsize = '15';
+      var body = null;
+      window.onload = function(){
+         body = document.getElementsByTagName('body')[0];
+         if(localStorage.usercolor){
+            //body.style.backgroundColor = localStorage.usercolor;
+            body.style.backgroundColor=localStorage.getItem("usercolor");
+         }else{
+            body.style.backgroundColor = defaultColor;
+         }
+         if(localStorage.userfont){
+            //body.style.fontSize = localStorage.userfont + 'px';
+            body.style.fontSize = localStorage.getItem("userfont") + 'px';
+         }else{
+            body.style.fontSize = defaultFontsize+ 'px';
+         }
+      }
+      function myclick(){
+         var usercolor = document.querySelector('#usercolor').value;
+         var userfont = document.querySelector('#userfont').value;
+        //  localStorage.usercolor = usercolor;
+        //  localStorage.userfont = userfont;
+        localStorage.setItem("usercolor",usercolor);
+        localStorage.setItem("userfont",userfont);
+
+         body.style.backgroundColor = usercolor;
+         body.style.fontSize = userfont+ 'px';
+      }
+      function myclear(){
+          //localStorage.removeItem('usercolor');
+          //localStorage.removeItem('userfont');
+          localStorage.clear();
+      }
+   </script>
+</head>
+<body>
+    
+   Favorite Color : <input type='color' id='usercolor' /><br />
+   Font Size : <input type='number' id='userfont' /><br />
+   <input type='button' value='save' onclick='myclick()' />
+   <input type='button' value='clear' onclick='myclear()' />
+</body>
+</html>

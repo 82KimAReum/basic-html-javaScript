@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form event demo</title>
+<script> 
+     window.addEventListener('load',setup);
+   
+  function setup() {
+      document.getElementById('mybutton').addEventListener('click',myclick);
+  }
+  function myclick() {
+      var label=this.innerHTML ;
+      if(label=='RED'){
+          document.getElementById('mybody').style.backgroundColor='blue';
+          this.style.color='blue';//눌린 버튼의 style.color(font-color)를 blue로 변경
+          this.style.backgroundColor='red';
+          this.innerHTML='BLUE'
+      }else if(label=='BLUE'){
+        document.getElementById('mybody').style.backgroundColor='red';
+          this.style.color='red';
+          this.style.backgroundColor='blue';
+          this.innerHTML='RED'
+      }
+  }
+</script>
+<style type='text/css'>
+    button{
+        width:100px;
+        height: 100px;
+        color:red;
+        background-color: blue;
+        font-size:2em;
+    }
+    body{
+        background-color: red;
+    
+    }
+
+</style>
+</head>
+<body id='mybody'>
+    <button type='button'id='mybutton'>RED</button>
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java Mall</title>
+    
+    <script>
+            window.addEventListener('load', setup, false);
+            function setup(){
+               document.getElementById('txtAdd').addEventListener('keydown', add, false);
+               document.getElementById('btnAdd').addEventListener('click', add, false);
+               document.getElementById('cart').addEventListener('click', cartSelect, false);
+               document.getElementById('btnRemove').addEventListener('click', remove, false);
+            }
+            function remove(){
+               var cart = document.getElementById('cart');
+               if(cart.selectedIndex != 0){
+                  cart.remove(cart.selectedIndex);
+                  document.getElementById('txtRemove').value = '';
+               }
+            }
+            function cartSelect(){
+               if(this.selectedIndex != 0){
+                  var idx = this.selectedIndex;
+                  document.getElementById('txtRemove').value = this.options[idx].value;
+               }
+            }
+            function add(evt){
+               if(this.id == 'txtAdd'){
+                  if(evt.keyCode != 13) return;
+               }
+               var product = document.getElementById('txtAdd').value;
+               var cart = document.getElementById('cart');
+               var option = document.createElement("option");
+               option.text = product;  option.value = product;
+               cart.add(option);
+               document.getElementById('txtAdd').value = '';
+            }
+         </script>
+
+</head>
+<body>
+    <p>상품담기: <input type='text' id='txtAdd' autofocus>
+    <input type='button' value='상품담기'id='btnAdd'></p>
+    
+    <p><select id='cart' size='10' style="width:320px;">
+        <option>--카트 목록--</option>
+        
+    </select></p>
+
+    <p>상품제거: <input type='text' id='txtRemove'>
+        <input type='button' value='상품제거'id='btnRemove'></p>
+
+</body>
+</html>

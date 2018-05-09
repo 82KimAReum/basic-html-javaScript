@@ -1,0 +1,26 @@
+h1 { text-align:center}
+table#firsttable {
+   width:800px;margin:20px auto 0px auto;
+   border-width : 0px ;
+}
+table#firsttable > td {
+   border-width : 0px ;
+}
+table#firsttable  td:last-child{
+   text-align:right;
+}
+table:last-child { 
+   width:800px;margin:0px auto;
+   border-collapse: collapse;
+}
+
+table:last-child, table:last-child  th, table:last-child  td {
+   border : 1px solid black;
+}
+table:last-child th{
+   background-color: navy;  color:white;
+   border-color: white;
+}
+table:last-child td{
+    text-align: center;width: 100px;
+}

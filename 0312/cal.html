@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>계산기</title>
+    <style type='text/css'>
+        input[type='number']{
+            width:50px; 
+            background-color:yellow;
+            font-size:1.2em;
+
+        }
+        button{
+            font-size:1.5em;
+            background-color:cyan;
+        }
+        select{
+            font-size:1.5em;
+
+        }
+        fieldset{
+            width:500px;
+            margin:50px auto;
+        }
+        output{
+            font-size:2em;
+            color:red;
+        }
+
+    </style>
+    <script>
+        window.onload=setup;
+        function setup(){
+            document.getElementById('btnCalc').onclick=myclick;
+
+        }
+        function myclick(){
+            var first= document.getElementById('first').value;
+            first = window.parseInt(first);
+            // window생략 가능
+            var second = document.getElementById('second').value;
+            second = parseInt(second);
+            // var str= 'first='+first+' second'+second;
+            
+            var idx=document.getElementById('op').selectedIndex;
+           var op= document.getElementById('op').options[idx].value;
+           var answer;
+            switch(op){
+                case '+': answer = first + second; break;
+                case '-':answer = first - second; break;
+                case '*':answer = first * second; break;
+                case '/':answer = first / second; break;
+            }
+           document.getElementById('answer').innerHTML=answer;
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>계산기</h1>
+    <form>
+        <fieldset>
+            <legend>값을 입력 후 = 버튼을 눌러주세요.</legend>
+            <input type='number' id='first'>
+        <select id ='op'>
+            <option>--연산자 선택--</option>
+            <option value='+'>+</option>
+            <option value='-'>-</option>
+            <option value='*'>x</option>
+            <option value='/'>/</option>
+        </select>
+
+        <input type='number' id='second'>
+        <button type='button'  id ='btnCalc'>=</button>
+        <output id='answer'></output>
+    </form>
+        </fieldset>
+        
+</body>
+</html>

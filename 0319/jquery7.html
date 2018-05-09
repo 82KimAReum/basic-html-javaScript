@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-selector Demo</title>
+    <script src='js/jquery-3.3.1.js'></script>
+    <script>
+        $().ready(function(){
+        //   $('p:eq(2)').css('color','cornflowerblue');//eq는 0부터 시작 eq(2)의 색을 red
+        //   $('p:lt(2)').css('color','red');//2번째보다 작은 것을 red
+          $('div p:nth-child(2)').css('color','chartreuse');//부모요소에서 n번째 자식
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>jQuery</p>
+        <p>Angular</p>
+        <p>Vue.js</p>
+        <p>Backbone.js</p>
+        <p>React</p>
+
+      </div>
+    
+
+      <!-- <p style="color:chartreuse"></p> -->
+
+</body>
+</html>

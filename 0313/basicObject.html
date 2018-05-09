@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic Object Demo</title>
+    <script src='js/student.js'></script>
+</head>
+<body>
+    <script>
+        var str ="Hello, World";//string
+        var str1= String("hello, World");//string
+        var str2=new String("Hello, world");//object
+        document.write("str ="+typeof(str)+"<br>");
+        document.write("str1 ="+typeof(str1)+"<br>");
+        document.write("str2 ="+typeof(str2)+"<br>");//object
+        document.write("str2 ="+typeof(str2.valueOf()));//string
+        
+        var chulsu =new Student('1101','김철수',89,90,89,78);
+        var sum=chulsu.getKor()+chulsu.getEng()+chulsu.getEdp()+chulsu.getMat();
+        var avg=sum/4;
+        var grade =(avg >=90 && avg<=100)?'A':
+                            (avg<90 && avg>=80)?'B':
+                                    (avg<80 && avg>=70)?'C':
+                                            (avg<70 && avg>=60)?'D':'F';
+        chulsu.setSum(sum);
+        chulsu.setAvg(avg);
+        chulsu.setGrade(grade);
+       
+        chulsu.myString();    
+
+
+        var jim={hakbun:'1001',irum:'짐',kor:90,eng:90,mat:90,edp:90};
+        var sum=jim.kor+jim.eng+jim.mat+jim.edp;
+        var avg=sum/4;
+        var grade =(avg >=90 && avg<=100)?'A':
+                            (avg<90 && avg>=80)?'B':
+                                    (avg<80 && avg>=70)?'C':
+                                            (avg<70 && avg>=60)?'D':'F';
+    document.write("<ul>");
+        for (var str in jim){
+            document.write("<li>"+str+"->"+jim[str]+"</li>");
+
+        }
+        document.write("<li>sum->"+sum+"</li>");
+        document.write("<li>avg->"+avg+"</li>");
+        document.write("<li>grade->"+grade+"</li>");
+        document.write("</ul>");
+    </script>
+</body>
+</html>

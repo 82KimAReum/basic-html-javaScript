@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>children() DEMO</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('div#sub').children().css('background-color','yellow');
+            $('div#container>p:first').css('color','red');
+           
+           
+        });
+        
+    </script>
+    <style type='text/css'>
+        /* div#sub{
+            background-color: yellow;
+        }
+        div#sub > p{
+            color:red;
+        } */
+    </style>
+</head>
+<body>
+  <div id='container'>
+      <div id='sub'>
+          <p>div안의 p</p>
+      </div>
+      <p>hello</p>
+      <p>world</p>
+  </div>
+
+</body>
+</html>

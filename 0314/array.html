@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array Demo</title>
+</head>
+<body>
+    <script>
+        //join,puch.join,pop,unshift
+        var array = ["Notepad","Eclipse","NetBeans","Visual Studio Code"];
+        
+        document.write(array+'<br>');//Notepad,Eclipse,NetBeans,Visual Studio Code
+        document.write(array.join(' - '));//Notepad - Eclipse - NetBeans - Visual Studio Code
+        document.write('<br>');
+        
+        array.push('Sublime Text');//뒤에서 넣음
+        document.write(array+'<br>');//Notepad,Eclipse,NetBeans,Visual Studio Code,Sublime Text
+        
+        array.unshift('Eclipse');//앞에서 넣음
+        document.write(array+'<br>');//Eclipse,Notepad,Eclipse,NetBeans,Visual Studio Code,Sublime Text
+
+        array.pop();//뒤에서 빠짐
+        document.write(array+'<br>');//Eclipse,Notepad,Eclipse,NetBeans,Visual Studio Code
+
+        array.shift();//앞에서 빠짐
+        document.write(array+'<br>');//Notepad,Eclipse,NetBeans,Visual Studio Code
+
+        
+
+
+
+    </script>
+</body>
+</html>

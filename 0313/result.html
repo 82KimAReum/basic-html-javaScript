@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>성적관리프로그램 - 출력창</title>
+   <script src="js/student.js"></script>
+</head>
+<body>
+   <script>
+      var str = window.location.search.substring(1);//location=url //search는?포함한 뒤 //substring(1)?를 빼고
+      var str1 = window.location.search.substring(0);//주소 ?다음 
+      document.write('str1------'+str2);
+      var array = str.split('&');  //hakbun=1101
+      var student = new Student(array[0].split('=')[1], 
+                                              decodeURI(array[1].split('=')[1]),
+                                              parseInt(array[2].split('=')[1]),
+                                              parseInt(array[3].split('=')[1]),
+                                              parseInt(array[4].split('=')[1]),
+                                              parseInt(array[5].split('=')[1])
+                                             );
+      var sum = student.getKor() + student.getEng() + 
+                      student.getMat() + student.getEdp();
+      var avg = sum / 4;
+      var grade = (avg >= 90 && avg <= 100) ? 'A' :
+                             (avg < 90 && avg >= 80) ? 'B' :
+                               (avg < 80 && avg >= 70) ? 'C' :
+                                  (avg < 70 && avg >= 60) ? 'D' : 'F';
+      student.setSum(sum);   student.setAvg(avg);
+      student.setGrade(grade);
+
+      document.write('<h1>성적결과</h1>');
+      document.write('<ul>');
+      document.write('<li>학번 : ' + student.getHakbun() + '</li>');
+      document.write('<li>이름 : ' + student.getIrum() + '</li>');
+      document.write('<li>국어 : ' + student.getKor() + '</li>');
+      document.write('<li>영어 : ' + student.getEng() + '</li>');
+      document.write('<li>수학 : ' + student.getMat() + '</li>');
+      document.write('<li>전산 : ' + student.getEdp() + '</li>');
+      document.write('<li>총점 : ' + student.getSum() + '</li>');
+      document.write('<li>평균 : ' + student.getAvg() + '</li>');
+      document.write('<li>평점 : ' + student.getGrade() + '</li>');
+      document.write('</ul>');
+   </script>
+
+</body>
+</html>

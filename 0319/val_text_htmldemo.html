@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>val() text() html() demo</title>
+   <script src='js/jquery-3.3.1.js'></script>
+   <script>
+      $(document).ready(function(){
+         $('button').click(function(){
+            // //get
+            // alert(document.getElementsByTagName('div')[0].innerHTML);//<p>Hello, World</p>
+            // alert($('div').text());//Hello, World
+            // alert($('div').html());//<p>Hello, World</p>
+            //set
+            // document.getElementsByTagName("div")[0].innerHTML = 
+            //                "<span style='color:red;font-weight:900'>HTML5</span>";
+            $('div:first ').text("<span style='color:red;font-weight:900'>HTML5</span>");//<span style='color:red;font-weight:900'>HTML5</span>
+
+
+            $('div p:nth-child(1)').html("<span style='color:red;font-weight:900'>HTML5</span>");//HTML5
+            //document.getElementById('username').value = '한지민';  //set
+            $('#username').val('한지민');
+         });
+      });
+   </script>
+   <style type='text/css'>
+   
+   </style>
+</head>
+<body>
+   <button type='button'>Change</button>
+   <div><p>Hello, World</p></div>
+   <div><p>Hello, World</p></div>
+   <input type='text' id='username' />
+</body>
+</html>

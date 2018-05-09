@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>DOM Demo</title>
+   <script>
+      function change(){
+         //var body = document.getElementsByTagName('body')[0];
+         //var mydiv = document.createElement('div');   //<div></div>
+         //var mytext = document.createTextNode('Hello, World');
+         //mydiv.appendChild(mytext);  //<div>Hello, World</div>
+         //body.appendChild(mydiv);
+         //body.replaceChild(mydiv, document.getElementById('myheading'));
+         var h1 = document.getElementById('myheading');
+         //h1.setAttribute('align', 'center');
+         h1.setAttribute('style', 'text-align:center;color:red;background-color:yellow')
+      }
+   </script>
+</head>
+<body>
+   <p><button type='button' onclick='change()'>Click Me!!!</button></p>
+   <h1 id='myheading'>I'm heading tag.</h1>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type ='text/css'>
+        body{background-color: yellow;}
+        div{background-color: red;
+        width:300px;
+        height:300px;}
+        button {
+            background-color:lime;;
+            width:100px; 
+            height: 100px;
+            position: absolute;
+            left:50px;
+            top:50px;
+        }
+
+    </style>
+    <script>
+        //bubbling up
+        window.onload=function(){
+            document.getElementById('mybody').onclick=bodyClick;
+            document.getElementById('mydiv').onclick=divClick;
+            document.getElementById('mybutton').onclick=buttonClick;
+
+
+        }
+        function bodyClick(e){
+            alert('click in the body');
+        }
+        function divClick(e){
+            alert('click in the div');
+        }
+        function buttonClick(e){
+            alert('click in the button');
+            stopEvent(e);
+        }
+        function stopEvent(e){
+            if(e)e.stopPropagation();
+            else cancelBubble=true;
+        }
+
+    </script>
+</head>
+<body id='mybody'>
+    <div id='mydiv'>
+        <button type='button' id='mybutton'> click me </button>
+        
+    </div>
+</body>
+</html>

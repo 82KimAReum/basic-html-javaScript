@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Ajax Demo</title>
+   <script src='js/jquery-1.12.4.js'></script>
+   <script>
+      $(function(){
+         $('#txtGreeting').focus(function(){
+            $.ajax({
+               url : 'sungjuk_utf8.json',
+               type : 'get',
+               dataType : 'json',
+               data : {
+                   id : $('txtId').val(),
+                   pwd : $('txtPwd').val(),
+                   username : $('txtName').val()
+               },
+               success : function(data){
+                  alert(data);
+               }
+            });
+         });
+      });
+      // window.onload = function(){
+      //    document.getElementById('txtGreeting').onfocus = function(){
+      //       var obj = new XMLHttpRequest();  //1. 생성
+      //       obj.open('get', 'sungjuk_utf8.json', true); //2. open
+      //       //open('method', 'server_file', boolean:true(비동기), false(동기))
+      //       obj.onreadystatechange = function(){
+      //          if(obj.readyState == 4 && obj.status == 200){
+      //             document.getElementById('msg').innerHTML = 
+      //                                      obj.responseText;
+      //          }
+      //       }
+      //       //readyState : 0 ~ 4
+      //       obj.send(null);  //3. send
+      //    }
+      //}
+   </script>
+</head>
+<body>
+   Greeting : <input type='text' id='txtGreeting' /><br>
+   <div id='msg'></div><br>
+   
+
+</body>
+</html>

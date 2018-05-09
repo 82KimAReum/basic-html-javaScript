@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clone() DEMO1</title>
+    
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        $(document).ready(function(){
+          //$('#menu').clone().insertBefore('#submenu');//sub앞에 menu복사가 옮
+            //$('#menu').clone().appendTo('#submenu');//sub다음에 menu 복사가옮
+            //$('#menu').clone().prependTo('#submenu');//sub앞에 meny복사
+            $('#menu').clone().insertAfter('#submenu');//sub다음에 menu 복사가옮
+
+
+        });
+    </script>
+
+</head>
+<body>
+    <div id='menu'>Home File Edit About</div>
+    <div id='menu2'>JavaScript jQuery</div>
+    <div id='content'>텍스트텍스트</div>
+    <div id='submenu'>하단메뉴</div>
+
+    
+    
+</body>
+</html>

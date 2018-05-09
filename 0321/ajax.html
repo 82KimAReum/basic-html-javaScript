@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Demo</title>
+    <script src='js/jquery-1.12.4.js'></script>
+
+    <script>
+        // window.onload=function(){
+        //     document.getElementById('txtGreeting').onfocus=function(){
+        //         var obj=new XMLHttpRequest();//1. 객체생성 Ajax를 가능하게 하는 객체
+        //         obj.open('get','sungjuk_utf8.json',true);//default 는get,server 에서 받을 애,true:비동기//false:동기
+        //         //open('method','server_file',boolean:true(비동기)/false(동기)) 2.
+        //         obj.onreadystatechange=function(){
+        //             if(obj.readyState==4 &&obj.status== 200){
+        //                 //readyState서버 갔다 왔니?/ status서버 정상이니?
+        //                 //obj.responseText;//받아온 데이터
+        //                 document.getElementById('txtGreeting').value=obj.responseText;
+        //                 document.getElementById('msg').innerHTML=obj.responseText;
+        //                 // obj.responseXML;
+        //             }
+        //         }; //4.receive
+        //         //readyState: 0~4
+        //         obj.send(null);//3.send
+        //     }
+        // }
+        $(function(){
+            var count=0;
+            
+                $.ajax({
+                    //url:'greeting_utf8.txt'
+                    url:'sungjuk_utf8.csv'
+                    ,type:'get'
+                    ,success:function(data){//data//서버가 보내준 data
+                        //$('#txtGreeting').text(data);
+                        $('#msg').bind('click',function(){
+                            if(count<data.split('\n').length){
+                            $('#txtGreeting').val(data.split('\n')[count++])
+                        }else{
+                            count=0;
+                        }
+                        });
+                    }
+                    
+                })
+            
+        });
+    </script>
+</head>
+<body>
+    Gretting: <input type="text" id='txtGreeting'size="40px" font-size="20px">
+    <br><button id='msg' >click me!!</button>
+</body>
+</html>

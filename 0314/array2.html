@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array Demo </title>
+</head>
+<body>
+    <script>
+        var student={name:'한지민',age:24,sight:{left:1.2,right:0.8},weight:49,height:158.3};//객체
+        
+        var fruits=['mango','lemon','apple','grape'];
+        var myclick=function(){
+            document.write('hello,world');
+        }
+        var arr=[];
+        arr.push(student);
+        arr.push(fruits);
+        arr.push(myclick);
+        arr.push(5);
+        arr.push(true);
+        arr.push(Math.PI);
+        arr.push(89.5);
+        arr.push(new Date());
+        
+
+        for(var i=0; i<arr.length; i++){
+            if(i==0){
+                document.write(arr[0].sight['right']+'<br>');//객체 접근 할때 . or ['']을 사용
+            }else if(i==2){
+                myclick();
+                document.write('<br>');
+            }else if(i==6)document.write(arr[6].toLocaleString()+'<br>');
+            else document.write(arr[i]+'<br>');
+        }
+    </script>
+</body>
+</html>

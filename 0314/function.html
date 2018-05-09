@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>function demo</title>
+    <script>
+         function hello(su){
+            su.irum='조용필';
+            document.write('in function su 이름 ='+ su.irum +'<br>');
+
+        }
+    </script>
+    <script src='../telephone/js/telephone.js'></script> 
+    
+</head>
+<body>
+    <script>
+       var su =new Telephone(2,'123-4567','한지민',1000);
+       hello(su);
+        document.write('body function su =' +su.irum+'<br>');
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function getData(){
+            // if(window.sessionStorage){
+                ////Storage
+                ////sessionStorage 브라우저 닫으면 날아감
+                ////localStorage 브라우저 닫아도 살아있음
+            //     alert('가능');
+            // }else{
+            //     alert('불가능');
+            // }
+        }
+       // getData();
+       var count=0;
+       function myclick(){
+                    // if(sessionStorage.clickcount){ 
+                    //     sessionStorage.clickcount=Number(sessionStorage.clickcount)+1;     
+                    // }else{
+                    //     sessionStorage.clickcount=0;
+                    // }
+                    // document.querySelector('#result').innerHTML=sessionStorage.clickcount;
+            
+            if(localStorage.clickcount){ 
+                //C:\Users\chimi\AppData\Local\Google\Chrome\User Data\Default\Local Storage\leveldb
+                localStorage.clickcount=Number(localStorage.clickcount)+1;     
+            }else{
+                localStorage.clickcount=0;
+            }
+            document.querySelector('#result').innerHTML=localStorage.clickcount;
+        }
+    </script>
+</head>
+<body>
+    <button type='button' onclick="myclick()">click</button>
+    <div id='result'></div>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IF demo</title>
+</head>
+<body>
+    <script>
+//if 문 switch
+        var season=prompt('당신은 어느 계절을 좋아하시나요?');
+        // if(season =='spring')document.write('진달래, 개나리');
+        // else if (season=='summer')document.write('장미,아카시아');
+        // else if(season=='fall')document.write('백합,코스모스');
+        // else document.write('동백 , 매화');
+
+        switch(season){
+            case 'spring':document.write('진달래,개나리');break;
+            case 'summer':document.write('장미,아카시아');break;
+            case 'fall':document.write('백합,코스모스');break;
+            default:document.write('동백,매화');break;
+        }
+
+    </script>
+</body>
+</html>

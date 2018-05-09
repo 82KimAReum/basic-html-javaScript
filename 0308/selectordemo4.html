@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>attribute selector demo</title>
+    <style type='text/css'>
+        a{ color:red}
+        a[href]{color:blue;}
+        a[href='https://www.naver.com']{color:green;}
+        a[href ^="mailto"]{color:cyan;} /*mailto로 시작하면*/
+        a[href $='co.kr']{ color:orange;} /*co.kr로 끝나면*/
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a >Hello,World</a>href</li>
+        <li><a href='https://www.naver.com'>Hello,World</a></li>
+        <li><a href='mailto:aaa@aaa.com'>Hello,World</a></li>
+        <li><a href='http://www.dothome.co.kr'>Hello,World</a></li>
+
+    </ul>
+</body>
+</html>

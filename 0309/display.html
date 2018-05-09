@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css display demo</title>
+    <style type='text/css'>
+        h1,p{
+            background-color:yellow;
+            display:inline;
+            /* 원래는 한 줄 먹는 태그만 inline을 줘서 진짜 내용만 먹음 */
+        }
+        span{
+            display:block;
+            background-color: red;
+        }
+        ul{
+            list-style-type: none;
+          background-color:navy;
+            padding: 20px;
+          display:inline;
+          color:white;
+        }
+        li{
+            display: inline;
+          
+        }
+        a{
+              color:white;
+              font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p>World</p>
+    <span>HTML5</span>
+
+    <ul>
+        <li><a href='https://www.naver.com'>naver</a></li> |
+        <li><a href='https://www.daum.net'>daum</a></li> |
+        <li><a href='https://www.google.com'>google</a></li>
+    </ul>
+
+</body>
+</html>

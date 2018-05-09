@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>drag &amp; drop demo1</title>
+    <style type="text/css">
+        #catcher,#catcher1{
+            width:180px;
+            height: 180px;
+            padding: 10px;
+            border:1px solid black;
+        }
+        #catcher,#catcher1{
+            float: left;
+        }
+       
+    </style>
+    <script>
+        window.addEventListener('load',setup,false);
+        function setup(){
+            //var foo= document.getElementById('foo');
+            var foo=document.querySelector('#foo');
+            var catcher=document.querySelector('#catcher');
+            var catcher1=document.querySelector('#catcher1');
+            foo.addEventListener('dragstart',function(evt){
+                evt.dataTransfer.setData('Text',this.id);
+                catcher.addEventListener('dragover',function(evt){
+                    evt.preventDefault();//evt기본동작 막음
+                },false);//bubble-up false
+            },false);//bubble-up false
+
+             foo.addEventListener('dragstart',function(evt){
+                evt.dataTransfer.setData('Text',this.id);
+                catcher1.addEventListener('dragover',function(evt){
+                    evt.preventDefault();//evt기본동작 막음
+                },false);//bubble-up false
+            },false);//bubble-up false
+            
+            catcher.addEventListener('drop',function(evt){
+                evt.preventDefault();
+                var id=evt.dataTransfer.getData('Text');
+                var elem=document.getElementById(id);
+                //elem.parentNode.removeChild(elem);//body에서 자식elem을지움
+                this.appendChild(elem);
+            },false);
+
+             catcher1.addEventListener('drop',function(evt){
+                evt.preventDefault();
+                var id=evt.dataTransfer.getData('Text');
+                var elem=document.getElementById(id);
+                //elem.parentNode.removeChild(elem);//body에서 자식elem을지움
+                this.appendChild(elem);
+            },false);
+        }
+    </script>
+</head>
+<body>
+    <h1>Drag &amp; drop Demo</h1>
+    
+    <div id='catcher'></div>
+    <div id='catcher1'></div>
+    
+    <br>
+    <p>
+    <img id='foo' src='images/html.png' draggable='true' width='150' height="150">
+    </p>
+
+</body>
+</html>

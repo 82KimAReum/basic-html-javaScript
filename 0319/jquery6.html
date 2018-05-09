@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-selector Demo</title>
+    <script src='js/jquery-3.3.1.js'></script>
+    <script>
+        $().ready(function(){
+          $('ol>li:even').css('color','red');//even과 odd는 0부터 시작
+          $('ol>li:odd').css('color','blue');
+        });
+    </script>
+</head>
+<body>
+    <ol>JavaScript
+        <li>jQuery</li>
+        <li>Angular</li>
+        <li>Vue.js</li>
+        <li>Backbone.js</li>
+        <li>React</li>
+
+    </ol>
+    
+</body>
+</html>

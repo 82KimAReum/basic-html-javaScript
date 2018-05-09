@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원정보 입력창</title>
+    <script>
+        window.addEventListener('load',setup,false);
+        function setup() {
+            document.getElementById('selEmail').addEventListener('change',emailChange,false);
+            document.getElementById('btnClose').addEventListener('click',myClose,false);
+        }
+        function myClose() {
+            var username=document.getElementById('txtName').value;
+            var userage=document.getElementById('txtAge').value;
+            
+            // var usergender=document.getElementsByName('gender');
+            // if(usergender[0].value=='남자'){
+            //     var usergender='남자'
+            // }
+            var gender=null;
+            if(document.getElementsByName('gender')[0].checked){
+                gender=document.getElementsByName('gender')[0].value;
+            }else{
+                gender=document.getElementsByName('gender')[1].value;
+            }
+            var usersel=document.getElementById('selTel').value;
+            var usertel=document.getElementById('txtTel').value;
+
+            
+            var useremail=document.getElementById('txtEmail').value;
+            var useremail1=document.getElementById('vendor').value;
+            
+            opener.document.getElementById('username').innerHTML=username;
+            opener.document.getElementById('userage').innerHTML=userage;   
+            opener.document.getElementById('usergender').innerHTML=gender;   
+
+            opener.document.getElementById('usertel').innerHTML=usersel+'-'+usertel;   
+
+            opener.document.getElementById('useremail').innerHTML=useremail+'@'+useremail1;    
+           // self.close();
+        }
+        function emailChange(){
+            // var idx=document.getElementById('selEmail').selectedIndex;
+            //     if(idx==5){
+            //        // document.getElementById('vendor').style.visibility='hidden';
+            //     }
+            var selEmail=document.getElementById('selEmail');
+            var idx=selEmail.selectedIndex;
+            if(idx !=0 && idx != 5){
+                document.getElementById('vendor').value=selEmail.options[idx].value;
+            }else if(idx ==5){
+                document.getElementById('vendor').value='';
+                document.getElementById('vendor').focus();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>회원 정보 입력</h1>
+    <form>
+        <fieldset>
+            <legend>정보를 입력해주세요</legend>
+                <ul style='list-style-type:none'>
+                    <li>이름:<input type="text"id='txtName'> </li>
+                    <li>나이:<input type="number"id='txtAge'size='5'> </li>
+                    <li>성별:
+                        <input type="radio"name='gender'value='남성'>남성
+                        <input type="radio"name='gender'value='여성'>여성 </li>
+                    <li>전화번호:
+                        <select id='selTel'>
+                            <option>--선택--</option>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>-<input type="tel" id='txtTel'>
+                         </li>
+                    <li>메일주소:<input type="text"id='txtEmail'>@
+                            <input type="email" id='vendor' size='10'>
+                            <select id='selEmail'>
+                                <option>--선택--</option>
+                                <option  value="naver.com">네이버</option>
+                                <option  value="hanmail.net">한메일</option>
+                                <option  value="hotmail.com">핫메일</option>
+                                <option  value="dreamwiz.com">드림위즈</option>
+                                <option  value="direct">직접입력</option>
+                            </select> 
+                   
+                </li>
+                    
+                </ul>
+                <input type="button" value="입력완료"id='btnClose'>
+        </fieldset>
+    </form>
+</body>
+</html>

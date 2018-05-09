@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>File API Demo</title>
+   <style type='text/css'>
+      #contents {
+         width:400px; height:400px;
+         border : 1px solid #000;
+      }
+   </style>
+   <script>
+      window.addEventListener('load', setup, false);
+      function setup(){
+         var myfiles = document.querySelector('#myfiles');
+         myfiles.addEventListener('change', fileView, false);
+      }
+      function isPreview(file){
+         //console.log(file.name.substring(file.name.lastIndexOf('.')));
+          if(file.type.match(/^text/g)) return true;
+          else if(file.type.match(/^image/g)) return true;
+          else if(file.name.substring(file.name.lastIndexOf('.')) == '.dat') return true;
+          else return false;
+      }
+      function fileView(){
+         var file = this.files[0];
+         if(!isPreview(file)){
+            alert("미리보기가 지원되지 않는 파일 형식입니다.");  return;
+         }
+         var fileReader = new FileReader();
+         //console.log(fileReader);
+         fileReader.addEventListener('error', function(error){
+            console.log('Error 발생 : ' + error);
+         },false);
+         fileReader.addEventListener('load', function(evt){
+            console.log('파일 로딩 : ' + evt);
+            var contents = fileReader.result;
+            contents = contents.replace(/</g, "&lt;");
+            contents = contents.replace(/>/g, "&gt;");
+            contents = contents.replace(/\n/g, '<br />');
+            document.getElementById('contents').innerHTML = contents;
+         },false);
+         fileReader.addEventListener('progress', function(evt){
+            console.log('진행 중 : ' + evt);
+         },false);
+         fileReader.addEventListener('loadstart', function(evt){
+            console.log('파일 로딩 시작 : ' + evt);
+         },false);
+         fileReader.addEventListener('loadend', function(evt){
+            console.log('파일 로딩 끝 : ' + evt);
+         },false);
+         fileReader.readAsText(file);
+      }
+   </script>
+</head>
+<body>
+   <div>
+      File : <input type='file' id='myfiles' />
+   </div>
+   <h1>File Contents</h1>
+   <div id='contents'></div>
+</body>
+</html>

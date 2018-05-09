@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>removeClass demo</title>
+   <script src='js/jquery-3.3.1.js'></script>
+   <script>
+      $(document).ready(function(){
+         $('p:eq(1)').removeClass('bg');
+      });
+   </script>
+   <style type='text/css'>
+      .bg { color:red; background-color: yellow;}
+   </style>
+</head>
+<body>
+      <div>
+         <p class='bg'>jQuery</p>
+         <p class='bg'>AngularJS</p>
+         <p class='bg'>React</p>
+      </div>
+</body>
+</html>

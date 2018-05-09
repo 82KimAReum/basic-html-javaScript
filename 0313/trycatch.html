@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>try ~ catch ~finally Demo</title>
+</head>
+<body>
+    <script>
+        function myfunction(){
+            return 110;
+        }
+        try{
+            //document.write(myfunction1());
+            var kor =myfunction();
+            if(kor< 0 || kor>100)
+                throw new Error("국어점수는 100보다 클 수 없음");
+        }catch(err){
+            document.write(err.message);//myfunction1 is not defined
+        }finally{
+            document.write("<br>"+"program is over...");
+        }
+    </script>
+</body>
+</html>

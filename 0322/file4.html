@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>File API Demo</title>
+   <!-- 이미지보여주기 -->
+   <style type='text/css'>
+      #contents {
+         width:400px; height:500px;
+         overflow: auto; margin-top:10px;
+      }
+   </style>
+   <script>
+      window.addEventListener('load', setup,false);
+      function setup(){
+         var myfiles = document.querySelector('#myfiles');
+         myfiles.addEventListener('change', myPreview, false);
+      }
+      function myPreview(){
+         var file = this.files[0];
+         //console.log(file.type);
+         var fileReader = new FileReader();
+                    fileReader.addEventListener('load', function(evt){
+                    var contents = document.querySelector("#contents");
+                    if(file.type.match(/^text/g)){  //텍스트라면
+                        var content = fileReader.result;
+                        content = content.replace(/</g, "&lt;");
+                        content = content.replace(/>/g, "&gt;");
+                        content = content.replace(/\n/g, '<br />');
+                        contents.innerHTML = content;
+                    }else if(file.type.match(/^image/g)){    //이미지라면
+                        var img = document.createElement('img');  //<img />
+                        img.setAttribute('src', fileReader.result);
+                        contents.appendChild(img);
+                    }
+                }, false);
+         if(file.type.match(/^image/g)){
+            fileReader.readAsDataURL(file);
+         }else if(file.type.match(/^text/g)){
+            fileReader.readAsText(file);
+         }
+      }
+   </script>
+</head>
+<body>
+   <div>
+      File : <input type='file' id='myfiles' />
+   </div>
+   <div id='contents'></div>
+</body>
+</html>

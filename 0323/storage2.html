@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <script>
+      var defaultColor = '#fff';
+      var defaultFontsize = '15';
+      var body = null;
+     var userid,userpwd,usercolor,userfont;
+
+      window.onload = function(){
+         body = document.getElementsByTagName('body')[0];
+         body.style.fontSize=defaultFontsize+'px' ;
+         body.style.backgroundColor = defaultColor;
+      }
+      function getData(){
+            var userid=document.querySelector('#userid');
+            var userpwd=document.querySelector('#userpwd');
+            var userobj = localStorage.getItem(userid.value);
+            userobj=JSON.parse(userobj);
+            if(userpwd.value == userobj.userpwd){
+                body.style.backgroundColor=userobj.usercolor;
+                body.style.fontSize = userobj.userfont+ 'px';
+            }else{
+                alert('비밀번호가 일치하지 않습니다.');
+            }
+        }
+      function myclick(){
+            var userid=document.querySelector('#userid');
+            var userpwd=document.querySelector('#userpwd');
+            var usercolor = document.querySelector('#usercolor');
+            var userfont = document.querySelector('#userfont');
+            var userobj={
+                userid:userid.value,
+                userpwd:userpwd.value,
+                usercolor:usercolor.value,
+                userfont:userfont.value
+                
+            };
+            var str =JSON.stringify(userobj);//string으로 저장
+            // var aaa= JSON.parse(str);//객체로 저장
+            // //alert(typeof str);
+            // alert(aaa.usercolor);
+            localStorage.setItem(userid.value,  str);
+      }
+      function myclear(){
+         localStorage.clear();
+      }
+   </script>
+</head>
+<body>
+   <div>
+      <fieldset>
+         <legend>Log In</legend>
+         ID : <input type='text' id='userid' /><br />
+         PWD : <input type='password' id='userpwd' /><br />
+         <input type="button" value="login"onclick='getData()'>
+      </fieldset>
+   </div>
+   Favorite Color : <input type='color' id='usercolor' /><br />
+   Font Size : <input type='number' id='userfont' /><br />
+   <input type='button' value='save' onclick='myclick()' />
+   <input type='button' value='clear' onclick='myclear()' />
+</body>
+</html>
